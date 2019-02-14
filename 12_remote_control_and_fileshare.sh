@@ -18,6 +18,7 @@ sudo sed -e 's/^new_cursors=true/new_cursors=false/g' \
 sudo systemctl restart xrdp
 
 # xsessionファイルの作成、cinnamonでログインする
+# Ubuntu18.04では本体側でログアウトが必要。ログイン状態だとリモート出来ない。
 echo "cinnamon-session" > ~/.xsession
 D=/usr/share/gnome:/usr/share/cinnamon:/usr/local/share:/usr/share
 D=${D}:/var/lib/snapd/desktop
