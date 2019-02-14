@@ -1,24 +1,7 @@
-if [ $# -ne 2 ]; then
-  echo "usage: ./16_remote_control_and_fileshare.sh public_key port_number"
-  exit 1
-fi
-
 UBUNTU_VER=$(lsb_release -sc)
 
 # install ssh-server
 sudo apt -y install openssh-server
-
-mkdir ~/.ssh
-chmod 700 ~/.ssh
-echo $1 > ~/.ssh/authorized_keys
-chmod 600 ~/.ssh/authorized_keys
-
-# ssh security setting
-sudo sed -i -e s/"Port 22"/"Port $2"/ /etc/ssh/sshd_config
-sudo sed -i -e s/"#AuthorizedKeysFile"/"AuthorizedKeysFile"/ /etc/ssh/sshd_config
-sudo sed -i -e s/"#PasswordAuthentication yes"/"PasswordAuthentication no"/ /etc/ssh/sshd_config
-
-sudo sed -i -e s/"PermitRootLogin prohibit-password"/"PermitRootLogin no"/ /etc/ssh/sshd_config
 
 # RDP
 if [ "$UBUNTU_VER" = "xenial" ]; then
@@ -27,14 +10,14 @@ if [ "$UBUNTU_VER" = "xenial" ]; then
 fi
 sudo apt -y install xrdp
 
-#new_cursorsの無効化
+# RDP設定、new_cursorsの無効化
 sudo sed -e 's/^new_cursors=true/new_cursors=false/g' \
  -i /etc/xrdp/xrdp.ini
 
-#xrdpサービスの再起動
+# xrdpサービスの再起動
 sudo systemctl restart xrdp
 
-#xsessionファイルの作成
+# xsessionファイルの作成、cinnamonでログインする
 echo "cinnamon-session" > ~/.xsession
 D=/usr/share/gnome:/usr/share/cinnamon:/usr/local/share:/usr/share
 D=${D}:/var/lib/snapd/desktop
