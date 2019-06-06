@@ -22,8 +22,11 @@ code --install-extension joaompinto.asciidoctor-vscode
 # VSCode設定変更
 # 設定ファイルがない場合は作る
 if [[ ! -e ~/.config/Code/User/settings.json ]]; then
-  # 実行する処理、以下は例
+  # 空のjsonを出力しておく
   echo "{}" > ~/.config/Code/User/settings.json
+  # I/Oの待ちを入れる。ないと書き終わる前にcatが走って失敗する
+  sleep 1
 fi
 cat ~/.config/Code/User/settings.json | jq '. | .+ {"asciidoc.use_asciidoctor_js": false}' | tee ~/.config/Code/User/settings.json
+sleep 1
 cat ~/.config/Code/User/settings.json | jq '. | .+ {"asciidoc.asciidoctor_command": "asciidoctor -r asciidoctor-diagram"}' | tee ~/.config/Code/User/settings.json
