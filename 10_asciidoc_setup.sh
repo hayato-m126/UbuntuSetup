@@ -1,7 +1,8 @@
 # java setup, for plantuml
-sudo add-apt-repository -y ppa:webupd8team/java
+wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
+sudo add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
 sudo apt -y update
-sudo apt -y install oracle-java8-installer
+sudo apt -y install adoptopenjdk-8-hotspot
 
 sudo apt -y install ruby
 
