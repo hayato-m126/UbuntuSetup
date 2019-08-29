@@ -9,5 +9,7 @@
 - chromeのプラグインインストール、検索エンジンをgoogle.co.jpにする
 - geditの保存前のバックアップ作成をオフにした
 - geditのカラーテーマをインストール
+- dconfエディタでnemoから右クリックで端末を開いたときにterminatorが起動するように変更
+    - org/cinnamon/desktop/applications/terminal/exeのcustom valueにterminatorを指定
 
 

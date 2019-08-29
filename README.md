@@ -1,13 +1,13 @@
 # Ubuntu setup shell scripts
-Ubuntu 18.04/16.04でROSを実行するための環境を作る。
+Ubuntu 18.04.3/16.04でROS1/2を実行するための環境を作る。
 
 併せて、IDEや開発に便利なツールを入れるためのスクリプトです。
 
 実施日
-- 2019/2/13
+- 2019/8/29
 
 ## 前提条件
-Ubuntu 18.04/16.04 LTS 64bit日本語Remixをインストールする
+Ubuntu 18.04.3/16.04 LTS 64bit日本語Remixをインストールする
 
 https://www.ubuntulinux.jp/download/ja-remix
 
@@ -21,7 +21,7 @@ https://www.ubuntulinux.jp/download/ja-remix
 chmod +x *.sh
 2. ファイル名の番号順に実行する
 ./NN_filename.sh
-00,08の実行後は再起動がかかります。
+00の実行後は再起動がかかります。
 
 ### アップデートでクラッシュとか出た場合
 途中で更新がクラッシュしたら、下記コマンド（GUIからは無理）
