@@ -15,10 +15,10 @@ sudo apt -y install cmake cmake-curses-gui
 sudo apt -y install putty
 
 # arduino
-wget http://downloads.arduino.cc/arduino-1.8.8-linux64.tar.xz
-tar xvf arduino-1.8.8-linux64.tar.xz
-sudo mv arduino-1.8.8 /opt
-cd /opt/arduino-1.8.8
+wget http://downloads.arduino.cc/arduino-1.8.9-linux64.tar.xz
+tar xvf arduino-1.8.9-linux64.tar.xz
+sudo mv arduino-1.8.9 /opt
+cd /opt/arduino-1.8.9
 ./install.sh
 
 # electrical circuit editor
