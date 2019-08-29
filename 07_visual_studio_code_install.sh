@@ -12,6 +12,6 @@ code --install-extension donjayamanne.githistory
 code --install-extension ms-ceintl.vscode-language-pack-ja
 code --install-extension ajshort.msg
 code --install-extension ms-python.python
-code --install-extension ajshort.ros
+code --install-extension ms-iot.vscode-ros
 code --install-extension smilerobotics.urdf
-code --install-extension robertohuertasm.vscode-icons
+code --install-extension vscode-icons-team.vscode-icons
