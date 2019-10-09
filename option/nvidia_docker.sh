@@ -1,15 +1,13 @@
 # install Graphic Driver
-sudo apt -y install nvidia-384
-
-# Add the package repositories
-curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
-distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
-curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt -y update
+sudo apt -y install nvidia-driver-435
 
-# Install nvidia-docker2 and reload the Docker daemon configuration
-sudo apt -y install nvidia-docker2
-sudo pkill -SIGHUP dockerd
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
 
-# Test nvidia-smi with the latest official CUDA image
-docker run --runtime=nvidia --rm nvidia/cuda nvidia-smi
+sudo apt -y update
+sudo apt -y install -y nvidia-container-toolkit
+sudo systemctl restart docker
+
