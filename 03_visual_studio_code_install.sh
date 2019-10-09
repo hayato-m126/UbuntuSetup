@@ -7,11 +7,4 @@ sudo apt -y update
 sudo apt -y install code # or code-insiders
 
 # install vscode extensions
-code --install-extension EditorConfig.editorconfig
-code --install-extension donjayamanne.githistory
-code --install-extension ms-ceintl.vscode-language-pack-ja
-code --install-extension ajshort.msg
-code --install-extension ms-python.python
-code --install-extension ms-iot.vscode-ros
-code --install-extension smilerobotics.urdf
-code --install-extension vscode-icons-team.vscode-icons
+code --install-extension shan.code-settings-sync
