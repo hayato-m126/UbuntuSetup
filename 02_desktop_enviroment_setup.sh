@@ -10,6 +10,7 @@ if [ "$UBUNTU_VER" = "bionic" ]; then
     sudo add-apt-repository -y ppa:gwendal-lebihan-dev/cinnamon-nightly
     sudo apt -y install cinnamon
     sudo apt -y install fcitx-mozc
+    # lightdmを入れるとディスプレイマネージャーをgdmかlightdmにするか聞かれるのでlightdmを選択する
     sudo apt -y install lightdm
 fi
 
