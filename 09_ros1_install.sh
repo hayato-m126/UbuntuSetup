@@ -19,7 +19,7 @@ source ~/.bashrc
 sudo apt -y install python-rosinstall python-rosinstall-generator python-wstool build-essential
 
 #tool
-sudo apt -y install ros-${ROS_VER}-rqt* #melodic package of rqt_ez_publihser was not found, 2019/2/11
+sudo apt -y install ros-${ROS_VER}-rqt*
 sudo apt -y install ros-${ROS_VER}-rosdoc-lite
 sudo apt -y install ros-${ROS_VER}-usb-cam
 sudo apt -y install ros-${ROS_VER}-rosserial ros-${ROS_VER}-rosserial-arduino

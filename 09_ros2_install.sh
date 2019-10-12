@@ -8,7 +8,9 @@ curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo ap
 sudo sh -c 'echo "deb [arch=amd64,arm64] http://packages.ros.org/ros2/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/ros2-latest.list'
 sudo apt -y update
 sudo apt -y install ros-dashing-desktop
-sudo apt -y install python3-colcon-common-extensions python3-rosdep python3-argcomplete
+sudo apt -y install python3-colcon-common-extensions
+sudo apt -y install python3-argcomplete
+sudo apt -y install python3-rosdep
 
 sudo rosdep init
 rosdep update
