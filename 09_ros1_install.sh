@@ -27,6 +27,7 @@ sudo apt -y install ros-${ROS_VER}-joy
 sudo apt -y install ros-${ROS_VER}-rosbridge-server
 sudo apt -y install ros-${ROS_VER}-rosbridge-suite
 sudo apt -y install ros-${ROS_VER}-smach-viewer
+sudo apt -y install ros-${ROS_VER}-jsk-visualization
 
 #joystic setting tool
 sudo apt -y install jstest-gtk
