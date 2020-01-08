@@ -39,7 +39,7 @@ sudo rm /etc/apt/sources.list.d/google.list
 # install Hardware Enablement kernel
 if [ "$UBUNTU_VER" = "xenial" ]; then
     sudo apt -y install --install-recommends linux-generic-hwe-16.04
-    sudo apt-get install --install-recommends xserver-xorg-hwe-16.04
+    sudo apt -y install --install-recommends xserver-xorg-hwe-16.04
 fi
 if [ "$UBUNTU_VER" = "bionic" ]; then
     sudo apt -y install --install-recommends linux-generic-hwe-18.04
