@@ -7,7 +7,7 @@ curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fi
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
-# fisher add oh-my-fish/theme-yimmy
+# fisher add rafaelrinaldi/pure
 # fisher add edc/bass
 # fisher add jethrokuan/z
 # fisher add jethrokuan/fzf
