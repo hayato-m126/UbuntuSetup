@@ -13,4 +13,7 @@ if [ "$UBUNTU_VER" = "bionic" ]; then
     # lightdmを入れるとディスプレイマネージャーをgdmかlightdmにするか聞かれるのでlightdmを選択する
     sudo apt -y install lightdm
 fi
+if [ "$UBUNTU_VER" = "focal" ]; then
+    sudo apt -y install cinnamon-desktop-environment
+fi
 

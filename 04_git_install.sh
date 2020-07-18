@@ -10,8 +10,3 @@ sudo apt -y install gitk
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 sudo apt -y install git-lfs
 
-# RabbitVCS
-sudo apt -y install rabbitvcs-core rabbitvcs-cli rabbitvcs-nautilus
-# cinnamonの環境が入っているとnemo用パッケージもインストールできる
-sudo apt -y install nemo-rabbitvcs
-

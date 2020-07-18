@@ -44,6 +44,9 @@ fi
 if [ "$UBUNTU_VER" = "bionic" ]; then
     sudo apt -y install --install-recommends linux-generic-hwe-18.04
 fi
+if [ "$UBUNTU_VER" = "focal" ]; then
+    sudo apt -y install --install-recommends linux-generic-hwe-20.04
+fi
 
 # and then reboot
 sudo reboot

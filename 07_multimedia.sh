@@ -1,4 +1,7 @@
 # screen shot tool
+if [ $(lsb_release -sc) = "focal" ]; then
+    sudo add-apt-repository ppa:linuxuprising/shutter
+fi
 sudo apt -y install shutter
 
 #screen capture, video
@@ -8,9 +11,6 @@ sudo apt -y install simplescreenrecorder
 
 # vlc
 sudo apt -y install vlc
-
-#image viewer
-sudo apt -y install xli
 
 # paint tool
 sudo apt -y install kolourpaint4

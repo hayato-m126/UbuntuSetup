@@ -1,0 +1,29 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/hyt/autoware.proj/install/velodyne_vls_pointcloud/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/velodyne_vls_laserscan/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/velodyne_vls_driver/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/velodyne_pointcloud/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/velodyne_driver/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/velodyne_msgs/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/velodyne_laserscan/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/ublox_msgs/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/traffic_light_classifier/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/scenario_logger_msgs/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/pointcloud_preprocessor/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/mpc_follower/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/motion_velocity_optimizer/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/npc_simulator/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/livox_ros_driver/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/dummy_perception_publisher/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/dummy_diag_publisher/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/autoware_vehicle_msgs/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/autoware_system_msgs/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/autoware_planning_msgs/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/autoware_perception_msgs/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/autoware_localization_srvs/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/autoware_lanelet2_msgs/lib/python2.7/dist-packages",
+        "/home/hyt/autoware.proj/install/autoware_control_msgs/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages"
+    ]
+}

@@ -1,13 +1,13 @@
 # Ubuntu setup shell scripts
-Ubuntu 18.04.3/16.04でROS1/2を実行するための環境を作る。
+Ubuntu 20.04 / 18.04.3 / 16.04でROS1/2を実行するための環境を作る。
 
 併せて、IDEや開発に便利なツールを入れるためのスクリプトです。
 
 実施日
-- 2019/8/29
+- 2020/7/18
 
 ## 前提条件
-Ubuntu 18.04.3/16.04 LTS 64bit日本語Remixをインストールする
+Ubuntu 20.04 / 18.04.3 / 16.04 LTS 64bit日本語Remixをインストールする
 
 https://www.ubuntulinux.jp/download/ja-remix
 

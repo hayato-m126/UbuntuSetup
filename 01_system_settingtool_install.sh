@@ -20,8 +20,10 @@ sudo apt -y install ntpdate
 sudo ntpdate -q ntp.nict.jp
 
 # GUI grub editor
-sudo add-apt-repository -y ppa:danielrichter2007/grub-customizer
-sudo apt -y update
+if [ $(lsb_release -sc) != "focal" ]; then
+    sudo add-apt-repository -y ppa:danielrichter2007/grub-customizer
+    sudo apt -y update
+fi
 sudo apt -y install grub-customizer
 
 # partition tool
