@@ -36,9 +36,6 @@ sudo apt -y install google-chrome-stable
 #なぜかキーが重複していると言われるので消す
 sudo rm /etc/apt/sources.list.d/google.list
 
-# brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
 # install Hardware Enablement kernel
 if [ "$UBUNTU_VER" = "xenial" ]; then
     sudo apt -y install --install-recommends linux-generic-hwe-16.04
