@@ -5,4 +5,4 @@ fi
 sudo apt -y install fish
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 
-# brew install fzf
+brew install fzf

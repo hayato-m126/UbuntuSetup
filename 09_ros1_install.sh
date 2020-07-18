@@ -1,6 +1,7 @@
 UBUNTU_VER=$(lsb_release -sc)
 [ "$UBUNTU_VER" = "bionic" ] && ROS_VER=melodic
 [ "$UBUNTU_VER" = "xenial" ] && ROS_VER=kinetic
+[ "$UBUNTU_VER" = "focal" ] && ROS_VER=noetic
 if [ "$ROS_VER" = "" ]; then
     echo "This script does not support Ubuntu $UBUNTU_VER"
     exit
@@ -16,7 +17,11 @@ sudo rosdep init
 rosdep update
 echo "source /opt/ros/$ROS_VER/setup.bash" >> ~/.bashrc
 source ~/.bashrc
-sudo apt -y install python-rosinstall python-rosinstall-generator python-wstool build-essential
+if [ "$UBUNTU_VER" = "focal" ]; then
+    sudo apt -y install python3-rosinstall python3-rosinstall-generator python3-wstool build-essential
+else
+    sudo apt -y install python-rosinstall python-rosinstall-generator python-wstool build-essential
+fi
 
 #tool
 sudo apt -y install ros-${ROS_VER}-rqt*
