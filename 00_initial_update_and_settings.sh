@@ -4,6 +4,25 @@ UBUNTU_VER=$(lsb_release -sc)
 sudo apt -y update
 sudo apt -y upgrade
 
+# git repository
+sudo add-apt-repository -y ppa:git-core/ppa
+sudo apt -y update
+
+# git and git gui tools
+sudo apt -y install git
+sudo apt -y install gitk
+
+# git lfs
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo apt -y install git-lfs
+
+# install curl
+sudo apt -y install curl
+
+# brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+echo "test -d /home/linuxbrew/.linuxbrew && eval \$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" | tee -a ~/.bashrc
+
 # English folder name, easy to type directory
 LANG=C xdg-user-dirs-update --force
 
@@ -21,9 +40,6 @@ sudo gpasswd -a $USER dialout
 # clock setting, use localtime
 sudo timedatectl set-local-rtc 1 --adjust-system-clock
 sudo hwclock -D --systohc --localtime
-
-# install curl
-sudo apt -y install curl
 
 # multi window console
 sudo apt -y install terminator
