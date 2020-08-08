@@ -7,7 +7,7 @@ if [ "$UBUNTU_VER" = "xenial" ]; then
     sudo apt -y install nvidia-430
 fi
 if [ "$UBUNTU_VER" = "bionic" ]; then
-    sudo apt -y install nvidia-driver-435
+    sudo apt -y install nvidia-driver-450
 fi
 
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)

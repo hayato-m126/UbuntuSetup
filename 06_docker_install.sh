@@ -7,3 +7,6 @@ sudo apt -y install docker-ce docker-ce-cli containerd.io
 
 # install docker-compose
 sudo apt -y install docker-compose
+
+# add user to docker group
+sudo gpasswd -a $USER docker

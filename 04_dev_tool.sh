@@ -6,3 +6,4 @@ sudo apt -y install cmake cmake-curses-gui
 
 brew install anyenv
 brew install fzf
+brew install ghq

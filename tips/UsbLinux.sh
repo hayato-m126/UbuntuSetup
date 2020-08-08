@@ -16,5 +16,3 @@ sudo umount efi
 rmdir efi
 
 echo "UUID=$3   /boot/efi  vfat    defaults    0   1" | sudo tee -a /etc/fstab
-
-
