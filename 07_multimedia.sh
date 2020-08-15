@@ -20,3 +20,6 @@ sudo apt -y install ffmpeg
 sudo add-apt-repository -y ppa:peek-developers/stable
 sudo apt -y update
 sudo apt -y install peek
+
+snap install irfanview
+sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
