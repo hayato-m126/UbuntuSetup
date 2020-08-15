@@ -23,3 +23,10 @@ sudo apt -y install peek
 
 snap install irfanview
 sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+
+# link fonts
+cd ~/.local/share/fonts
+for file in `find . -type f` ; do
+  relative_path=`echo $file | sed s@\.\/@@`
+  ln -snfv `realpath $file` ~/snap/irfanview/common/.wine/drive_c/windows/Fonts
+done

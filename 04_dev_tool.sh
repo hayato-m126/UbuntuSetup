@@ -9,8 +9,8 @@ brew install fzf
 brew install ghq
 
 # virtualbox
-sudo apt-key add oracle_vbox_2016.asc
-sudo apt-key add oracle_vbox.asc
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
 sudo apt -y install virtualbox-6.1
 
 # vmware
