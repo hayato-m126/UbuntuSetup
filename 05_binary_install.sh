@@ -42,3 +42,8 @@ rm -rf KeeWeb-*.linux.x64.deb
 wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.8.0-amd64.deb
 sudo apt install ./slack-desktop-*.deb
 rm -rf slack-desktop-*.deb
+
+# peazip
+wget https://ymu.dl.osdn.jp/peazip/73201/peazip_7.3.2.LINUX.x86_64.GTK2.deb
+sudo dpkg -i peazip_*.LINUX.x86_64.GTK2.deb
+rm -rf peazip_*.LINUX.x86_64.GTK2.deb
