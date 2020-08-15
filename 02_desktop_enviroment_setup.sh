@@ -11,3 +11,8 @@ fi
 if [ "$UBUNTU_VER" = "bionic" ]; then
     sudo apt -y install fcitx-mozc
 fi
+
+# cinnamon settings
+gsettings set org.cinnamon.desktop.default-applications.terminal exec "terminator"
+gsettings set org.cinnamon.desktop.wm.preferences mouse-button-modifier "<Super>"
+gsettings set org.cinnamon.desktop.wm.preferences mouse-button-zoom-modifier "<Super>"
