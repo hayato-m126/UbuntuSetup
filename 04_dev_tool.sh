@@ -8,6 +8,7 @@ brew install anyenv
 brew install fzf
 brew install ghq
 brew install sachaos/tap/ac-deck
+brew install github/gh/gh
 
 # virtualbox
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -

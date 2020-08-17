@@ -28,3 +28,6 @@ sudo apt -y install grub-customizer
 
 # partition tool
 sudo apt -y install gparted
+
+# disk analyzer
+sudo apt -y install ncdu
