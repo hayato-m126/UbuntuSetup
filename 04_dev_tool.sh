@@ -1,18 +1,14 @@
-# document tool
-sudo apt -y install doxygen doxygen-gui graphviz
-
 # make tool
 sudo apt -y install cmake cmake-curses-gui
 
 brew install anyenv
 brew install fzf
 brew install ghq
-brew install sachaos/tap/ac-deck
 brew install github/gh/gh
 
 # virtualbox
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
-wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib"
 sudo apt -y install virtualbox-6.1
 
 # vmware

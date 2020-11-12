@@ -16,7 +16,7 @@ echo "Comment[ja_JP]=No description" | tee -a ~/.config/autostart/activitywatch.
 echo "X-GNOME-Autostart-Delay=10" | tee -a ~/.config/autostart/activitywatch.desktop
 
 # thunderbird
-wget https://ftp.mozilla.org/pub/thunderbird/releases/68.11.0/linux-x86_64/ja/thunderbird-68.11.0.tar.bz2
+wget https://ftp.mozilla.org/pub/thunderbird/releases/78.4.3/linux-x86_64/ja/thunderbird-78.4.3.tar.bz2
 tar -jxvf thunderbird*.tar.bz2
 sudo mv thunderbird /opt/
 rm -rf thunderbird*.tar.bz2
@@ -34,16 +34,16 @@ echo "StartupNotify=true" | tee -a ~/.local/share/applications/thunderbird.deskt
 echo "MimeType=x-scheme-handler/mailto;" | tee -a ~/.local/share/applications/thunderbird.desktop
 
 # keeweb
-wget https://github.com/keeweb/keeweb/releases/download/v1.15.6/KeeWeb-1.15.6.linux.x64.deb
+wget https://github.com/keeweb/keeweb/releases/download/v1.15.7/KeeWeb-1.15.7.linux.x64.deb
 sudo dpkg -i KeeWeb-*.linux.x64.deb
 rm -rf KeeWeb-*.linux.x64.deb
 
 # slack
-wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.8.0-amd64.deb
+wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.11.1-amd64.deb
 sudo apt install ./slack-desktop-*.deb
 rm -rf slack-desktop-*.deb
 
 # peazip
-wget https://ymu.dl.osdn.jp/peazip/73201/peazip_7.3.2.LINUX.x86_64.GTK2.deb
+wget https://ymu.dl.osdn.jp/peazip/73744/peazip_7.4.2.LINUX.x86_64.GTK2.deb
 sudo dpkg -i peazip_*.LINUX.x86_64.GTK2.deb
 rm -rf peazip_*.LINUX.x86_64.GTK2.deb
