@@ -1,3 +1,8 @@
+# keeweb
+wget https://github.com/keeweb/keeweb/releases/download/v1.16.7/KeeWeb-1.16.7.linux.x64.deb
+sudo dpkg -i KeeWeb-*.linux.x64.deb
+rm -rf KeeWeb-*.linux.x64.deb
+
 # activitywatch
 wget https://github.com/ActivityWatch/activitywatch/releases/download/v0.8.0b9/activitywatch-v0.8.0b9-linux-x86_64.zip
 unzip activitywatch-*.zip
@@ -32,11 +37,6 @@ echo "Terminal=false" | tee -a ~/.local/share/applications/thunderbird.desktop
 echo "Type=Application" | tee -a ~/.local/share/applications/thunderbird.desktop
 echo "StartupNotify=true" | tee -a ~/.local/share/applications/thunderbird.desktop
 echo "MimeType=x-scheme-handler/mailto;" | tee -a ~/.local/share/applications/thunderbird.desktop
-
-# keeweb
-wget https://github.com/keeweb/keeweb/releases/download/v1.15.7/KeeWeb-1.15.7.linux.x64.deb
-sudo dpkg -i KeeWeb-*.linux.x64.deb
-rm -rf KeeWeb-*.linux.x64.deb
 
 # slack
 wget https://downloads.slack-edge.com/linux_releases/slack-desktop-4.11.1-amd64.deb

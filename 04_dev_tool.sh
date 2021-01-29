@@ -6,6 +6,9 @@ brew install fzf
 brew install ghq
 brew install github/gh/gh
 
+# diff tool
+sudo apt -y install meld
+
 # virtualbox
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib"
