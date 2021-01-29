@@ -10,7 +10,6 @@ sudo apt -y update
 
 # git and git gui tools
 sudo apt -y install git
-sudo apt -y install gitk
 
 # git lfs
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
@@ -51,9 +50,6 @@ sudo apt -y update
 sudo apt -y install google-chrome-stable
 #なぜかキーが重複していると言われるので消す
 sudo rm /etc/apt/sources.list.d/google.list
-
-# install driver, nvidia driver
-sudo ubuntu-drivers autoinstall
 
 # install Hardware Enablement kernel
 if [ "$UBUNTU_VER" = "xenial" ]; then
