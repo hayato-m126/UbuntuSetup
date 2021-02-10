@@ -33,6 +33,7 @@ sudo apt -y install ros-${ROS_VER}-rosbridge-server
 sudo apt -y install ros-${ROS_VER}-rosbridge-suite
 sudo apt -y install ros-${ROS_VER}-smach-viewer
 sudo apt -y install ros-${ROS_VER}-jsk-visualization
+sudo apt install -y python3-vcstool
 
 #joystic setting tool
 sudo apt -y install jstest-gtk
