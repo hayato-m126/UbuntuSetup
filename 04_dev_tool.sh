@@ -1,5 +1,9 @@
 UBUNTU_VER=$(lsb_release -sc)
 
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
+mkdir -p ~/.config/fish/completions
+ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+
 # python tool
 python3 -m pip install --user pipx
 python3 -m pipx ensurepath
