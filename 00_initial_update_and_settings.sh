@@ -18,10 +18,6 @@ sudo apt -y install git-lfs
 # install curl
 sudo apt -y install curl
 
-# brew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-echo "test -d /home/linuxbrew/.linuxbrew && eval \$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" | tee -a ~/.bashrc
-
 # English folder name, easy to type directory
 LANG=C xdg-user-dirs-update --force
 
