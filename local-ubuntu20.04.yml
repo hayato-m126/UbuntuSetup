@@ -3,6 +3,6 @@
   connection: local
   become: no
   roles:
-    - { role: common, tags: common }
+    - { role: system, tags: system }
     - { role: development, tags: development }
 

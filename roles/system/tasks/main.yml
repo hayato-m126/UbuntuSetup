@@ -1,0 +1,33 @@
+---
+- name: install system tools using apt
+  apt:
+    name:
+      - curl
+      - dconf-editor
+      - dphys-swapfile
+      - gparted
+      - gufw
+      - hardinfo
+      - ncdu
+      - terminator
+      - winbind
+      - zstd
+    update_cache: yes
+    become: yes
+
+- name: install grub-customizer
+  apt:
+    name: grub-customizer
+    apt_repository:
+      repo: ppa:danielrichter2007/grub-customizer
+      state: present
+
+- name: install fish shell
+  apt:
+    name: fish
+    apt_repository:
+      repo: ppa:fish-shell/release-3
+      state: present
+
+- name: install fisher
+  shell: "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
