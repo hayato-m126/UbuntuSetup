@@ -2,6 +2,7 @@
 - name: install system tools using apt
   apt:
     name:
+      - cinnamon-desktop-environment
       - curl
       - dconf-editor
       - dphys-swapfile
@@ -14,6 +15,13 @@
       - zstd
     update_cache: yes
     become: yes
+
+- name: install git latest
+  apt:
+    name: git
+    apt_repository:
+      repo: ppa:git-core/ppa
+      state: present
 
 - name: install grub-customizer
   apt:
@@ -31,3 +39,22 @@
 
 - name: install fisher
   shell: "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
+
+- name: set cinammon env default terminal
+  dconf:
+    key: "/org/cinnamon/desktop/default-applications/terminal"
+    value: "['exec', 'terminator']"
+    state: present
+
+- name: set cinnamon env key custimeze (1/2)
+  dconf:
+    key: "/org/cinnamon/desktop/wm/preferences"
+    value: "['mouse-button-modifier', \"<Super>\"]"
+    state: present
+
+- name: set cinnamon env key custimeze (2/2)
+  dconf:
+    key: "/org/cinnamon/desktop/wm/preferences"
+    value: "['mouse-button-zoom-modifier', \"<Super>\"]"
+    state: present
+
