@@ -18,32 +18,38 @@
       - zstd
     update_cache: yes
 
+- name: add git ppa
+  become: yes
+  apt_repository:
+    repo: ppa:git-core/ppa
+    state: present
+
 - name: install git latest
   become: yes
   apt:
     name: git
-    apt_repository:
-      repo: ppa:git-core/ppa
-      state: present
+    update_cache: yes
 
 - name: install grub-customizer
   become: yes
   apt:
     name: grub-customizer
-    apt_repository:
-      repo: ppa:danielrichter2007/grub-customizer
-      state: present
+    update_cache: yes
+
+- name: add fish ppa
+  become: yes
+  apt_repository:
+    repo: ppa:fish-shell/release-3
+    state: present
 
 - name: install fish shell
   become: yes
   apt:
     name: fish
-    apt_repository:
-      repo: ppa:fish-shell/release-3
-      state: present
+    update_cache: yes
 
-- name: install fisher
-  shell: "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
+# - name: install fisher
+#   shell: "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
 
 - name: set cinammon env default terminal
   dconf:
@@ -64,17 +70,18 @@
     state: present
 
 - name: disable sleep when close note pc dispaly
+  become: yes
   lineinfile:
     path: /etc/systemd/logind.conf
     line: "HandleLidSwitch=ignore"
     insertafter: EOF
 
-- name: add {{ ansible_user }} to group dialout
-  become: yes
-  user:
-    name: {{ ansible_user }}
-    group: dialout
-    append: yes
+# - name: add "{{ ansible_user }}"" to group dialout
+#   become: yes
+#   user:
+#     name: "{{ ansible_user }}"
+#     group: dialout
+#     append: yes
 
 - name: set clock local for Windows dual boot system
   become: yes
@@ -101,10 +108,9 @@
     repo: "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
     filename: "google-chrome"
     state: present
-    update_cache: yes
 
 - name: install google-chrome
   become: yes
   apt:
     name: google-chrome-stable
-    state: present
+    update_cache: yes
