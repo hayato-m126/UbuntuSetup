@@ -48,8 +48,13 @@
     name: fish
     update_cache: yes
 
-# - name: install fisher
-#   shell: "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
+# - name: install fisher (1/2)
+#   get_url:
+#     url: https://git.io/fisher
+#     dest: /tmp/fisher_install
+
+# - name: install fisher (2/2)
+#   shell: "fish source /tmp/fisher_install && fisher install jorgebucaran/fisher"
 
 # - name: set cinammon env default terminal
 #   dconf:
@@ -76,12 +81,12 @@
     line: "HandleLidSwitch=ignore"
     insertafter: EOF
 
-# - name: add "{{ ansible_user }}"" to group dialout
-#   become: yes
-#   user:
-#     name: "{{ ansible_user }}"
-#     group: dialout
-#     append: yes
+- name: add {{ ansible_user }} to dialout group
+  become: yes
+  user:
+    name: "{{ ansible_user }}"
+    group: dialout
+    append: yes
 
 - name: set clock local for Windows dual boot system
   become: yes

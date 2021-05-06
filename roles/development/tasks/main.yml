@@ -129,10 +129,10 @@
       - docker-compose
     update_cache: yes
 
-# - name: add use to docker group
-#   become: yes
-#   user:
-#     name: hyt
-#     group: docker
-#     append: yes
+- name: add {{ ansible_user }} to docker group
+  become: yes
+  user:
+    name: "{{ ansible_user }}"
+    group: docker
+    append: yes
 
