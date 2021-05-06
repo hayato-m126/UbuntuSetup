@@ -43,14 +43,15 @@
     state: link
 
 - name: install make tools
+  become: yes
   apt:
     name:
       - cmake
       - cmake-curses-gui
     update_cache: yes
-    become: yes
 
 - name: install pyenv build dependncies
+  become: yes
   apt:
     name:
       - build-essential
@@ -70,7 +71,6 @@
       - liblzma-dev
       - python-openssl
     update_cache: yes
-    become: yes
 
 - name: install pipx
   pip:

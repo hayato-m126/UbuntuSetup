@@ -1,5 +1,6 @@
 ---
 - name: install system tools using apt
+  become: yes
   apt:
     name:
       - cinnamon-desktop-environment
@@ -16,9 +17,9 @@
       - winbind
       - zstd
     update_cache: yes
-    become: yes
 
 - name: install git latest
+  become: yes
   apt:
     name: git
     apt_repository:
@@ -26,6 +27,7 @@
       state: present
 
 - name: install grub-customizer
+  become: yes
   apt:
     name: grub-customizer
     apt_repository:
@@ -33,6 +35,7 @@
       state: present
 
 - name: install fish shell
+  become: yes
   apt:
     name: fish
     apt_repository:
@@ -67,28 +70,33 @@
     insertafter: EOF
 
 - name: add {{ ansible_user }} to group dialout
+  become: yes
   user:
     name: {{ ansible_user }}
     group: dialout
     append: yes
 
 - name: set clock local for Windows dual boot system
+  become: yes
   timezone:
     name: Asia/Tokyo
     hwclock: local
 
 - name: setting for winbind
+  become: yes
   lineinfile:
     path: /etc/nsswitch.conf
     regexp: "dns$"
     line: "dns wins"
 
 - name: add chrome apt key
+  become: yes
   apt_key:
     url: https://dl-ssl.google.com/linux/linux_signing_key.pub
     state: present
 
 - name: add chrome apt repository
+  become: yes
   apt_repository:
     repo: "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
     filename: "google-chrome"
@@ -96,6 +104,7 @@
     update_cache: yes
 
 - name: install google-chrome
+  become: yes
   apt:
     name: google-chrome-stable
     state: present
