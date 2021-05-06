@@ -8,5 +8,5 @@ https://www.ubuntulinux.jp/download/ja-remix
 
 ## how to run
 ```
-./setup.sh
+./setup-localhost.sh
 ```
