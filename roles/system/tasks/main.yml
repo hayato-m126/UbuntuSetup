@@ -121,10 +121,10 @@
     deb: https://github.com/keeweb/keeweb/releases/download/v1.17.6/KeeWeb-1.17.6.linux.x64.deb
     update_cache: yes
 
-- name: install slack
-  become: yes
-  snap:
-    name: slack
+# - name: install slack
+#   become: yes
+#   snap:
+#     name: slack
 
 - name: install activitywatch
   become: yes
@@ -132,6 +132,11 @@
     src: https://github.com/ActivityWatch/activitywatch/releases/download/v0.8.0b9/activitywatch-v0.8.0b9-linux-x86_64.zip
     dest: /opt/
     remote_src: yes
+
+- name: add autostart directory
+  file:
+    path: ~/.config/autostart
+    state: directory
 
 - name: add autostart activitywatch
   copy:

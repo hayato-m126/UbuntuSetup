@@ -1,18 +1,6 @@
-UBUNTU_VER=$(lsb_release -sc)
-
-# install Graphic Driver
-sudo add-apt-repository ppa:graphics-drivers/ppa
-if [ "$UBUNTU_VER" = "xenial" ]; then
-    sudo apt -y update
-    sudo apt -y install nvidia-430
-fi
-if [ "$UBUNTU_VER" = "bionic" ]; then
-    sudo apt -y install nvidia-driver-450
-fi
 if [ "$UBUNTU_VER" = "focal" ]; then
     sudo apt -y install nvidia-driver-455
 fi
-
 
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
