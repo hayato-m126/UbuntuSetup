@@ -91,10 +91,10 @@
 
 - name: setting for winbind
   become: yes
-  lineinfile:
+  replace:
     path: /etc/nsswitch.conf
-    regexp: " dns"
-    line: " dns wins"
+    regexp: " dns$"
+    replace: " dns wins"
 
 - name: add chrome apt key
   become: yes
