@@ -70,6 +70,7 @@
       - libffi-dev
       - liblzma-dev
       - python-openssl
+      - python3-pip
     update_cache: yes
 
 - name: install pipx
