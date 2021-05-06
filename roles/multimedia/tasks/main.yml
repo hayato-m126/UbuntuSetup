@@ -1,0 +1,34 @@
+---
+- name: add shutter ppa
+  become: yes
+  apt_repository:
+    repo: ppa:linuxuprising/shutter
+    state: present
+
+- name: add simplesceenrecorder ppa
+  become: yes
+  apt_repository:
+    repo: ppa:maarten-baert/simplescreenrecorder
+    state: present
+
+- name: add peek ppa
+  become: yes
+  apt_repository:
+    repo: ppa:peek-developers/stable
+    state: present
+
+- name: install multimedia applications using apt
+  become: yes
+  apt:
+    name:
+      - shutter
+      - simplescreenrecorder
+      - vlc
+      - kolourpaint4
+      - ffmpeg
+      - peek
+    update_cache: yes
+
+- name: install irfanview using snap
+  snap:
+    name: irfanview
