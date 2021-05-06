@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/opt/activitywatch/aw-qt
+X-GNOME-Autostart-enabled=true
+NoDisplay=false
+Hidden=false
+Name[ja_JP]=activitywatch
+Comment[ja_JP]=No description
+X-GNOME-Autostart-Delay=10

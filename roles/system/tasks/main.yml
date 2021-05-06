@@ -93,8 +93,8 @@
   become: yes
   lineinfile:
     path: /etc/nsswitch.conf
-    regexp: "dns$"
-    line: "dns wins"
+    regexp: " dns"
+    line: " dns wins"
 
 - name: add chrome apt key
   become: yes
@@ -114,3 +114,39 @@
   apt:
     name: google-chrome-stable
     update_cache: yes
+
+- name: install keeweb
+  become: yes
+  apt:
+    deb: https://github.com/keeweb/keeweb/releases/download/v1.17.6/KeeWeb-1.17.6.linux.x64.deb
+    update_cache: yes
+
+- name: install slack
+  become: yes
+  snap:
+    name: slack
+
+- name: install activitywatch
+  become: yes
+  unarchive:
+    src: https://github.com/ActivityWatch/activitywatch/releases/download/v0.8.0b9/activitywatch-v0.8.0b9-linux-x86_64.zip
+    dest: /opt/
+    remote_src: yes
+
+- name: add autostart activitywatch
+  copy:
+    src: activitywatch.desktop
+    dest: ~/.config/autostart/activitywatch.desktop
+
+- name: install thunderbird
+  become: yes
+  unarchive:
+    src: https://archive.mozilla.org/pub/thunderbird/releases/78.10.1/linux-x86_64/ja/thunderbird-78.10.1.tar.bz2
+    dest: /opt/
+    remote_src: yes
+
+- name: add thunderbird to startmenu
+  copy:
+    src: thunderbird.desktop
+    dest: ~/.local/share/applications/thunderbird.desktop
+

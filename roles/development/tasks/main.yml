@@ -79,6 +79,23 @@
     executable: pip3
     extra_args: --user
 
+- name: pipx ensurepath
+  shell: python3 -m pipx ensurepath
+
+- name: pipx completion
+  shell: pipx completions
+
+- name: install argcomplete using pipx
+  shell: pipx install argcomplete
+
+- name: get poetry install.py
+  get_url:
+    url: https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py
+    dest: /tmp/install-poetry.py
+
+- name: install poetry to default python3
+  shell: python3 /tmp/install-poetry.py
+
 - name: install docker build dependncies
   become: yes
   apt:
