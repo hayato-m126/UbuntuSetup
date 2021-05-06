@@ -30,5 +30,15 @@
     update_cache: yes
 
 - name: install irfanview using snap
+  become: yes
   snap:
     name: irfanview
+
+- name: get calibre install script
+  get_url:
+    url: https://download.calibre-ebook.com/linux-installer.sh
+    dest: /tmp/calibre-installer.sh
+
+- name: execute calibre install
+  become: yes
+  shell: bash /tmp/calibre-installer.sh
