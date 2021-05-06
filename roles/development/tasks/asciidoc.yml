@@ -1,0 +1,24 @@
+---
+- name: install ruby
+  apt:
+    name:
+      - ruby
+    update_cache: yes
+    become: yes
+
+- name: install asciidoc module using gem
+  gem:
+    name:
+      - bundler
+      - asciidoctor
+      - asciidoctor-pdf-cjk
+      - asciidoctor-diagram
+      - coderay
+      - rouge
+      - concurrent-ruby
+
+- name: install pre-relese package
+  gem:
+    name: asciidoctor-pdf
+    pre_release: yes
+
