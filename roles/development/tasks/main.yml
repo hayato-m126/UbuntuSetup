@@ -82,11 +82,11 @@
 - name: pipx ensurepath
   shell: python3 -m pipx ensurepath
 
-- name: pipx completion
-  shell: pipx completions
+# - name: pipx completion
+#   shell: pipx completions
 
-- name: install argcomplete using pipx
-  shell: pipx install argcomplete
+# - name: install argcomplete using pipx
+#   shell: pipx install argcomplete
 
 - name: get poetry install.py
   get_url:
