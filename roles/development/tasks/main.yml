@@ -24,3 +24,56 @@
   apt:
     name: code
     state: present
+
+- name: install asdf
+  git:
+    repo: https://github.com/asdf-vm/asdf.git
+    dest: ~/.asdf
+    version: v0.8.0
+
+- name: make asdf completions (1/2)
+  file:
+    path: ~/.config/fish/completions
+    state: directory
+
+- name: make asdf completions (2/2)
+  file:
+    src: ~/.asdf/completions/asdf.fish
+    dest: ~/.config/fish/completions/asdf.fish
+    state: link
+
+- name: install make tools
+  apt:
+    name:
+      - cmake
+      - cmake-curses-gui
+    update_cache: yes
+    become: yes
+
+- name: install pyenv build dependncies
+  apt:
+    name:
+      - build-essential
+      - libssl-dev
+      - zlib1g-dev
+      - libbz2-dev
+      - libreadline-dev
+      - libsqlite3-dev
+      - wget
+      - curl
+      - llvm
+      - libncurses5-dev
+      - libncursesw5-dev
+      - xz-utils
+      - tk-dev
+      - libffi-dev
+      - liblzma-dev
+      - python-openssl
+    update_cache: yes
+    become: yes
+
+- name: install pipx
+  pip:
+    name: pipx
+    executable: pip3
+    extra_args: --user

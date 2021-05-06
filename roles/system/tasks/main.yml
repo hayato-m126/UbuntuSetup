@@ -9,6 +9,8 @@
       - gparted
       - gufw
       - hardinfo
+      - linux-generic-hwe-20.04
+      - meld
       - ncdu
       - terminator
       - winbind
@@ -58,3 +60,42 @@
     value: "['mouse-button-zoom-modifier', \"<Super>\"]"
     state: present
 
+- name: disable sleep when close note pc dispaly
+  lineinfile:
+    path: /etc/systemd/logind.conf
+    line: "HandleLidSwitch=ignore"
+    insertafter: EOF
+
+- name: add {{ ansible_user }} to group dialout
+  user:
+    name: {{ ansible_user }}
+    group: dialout
+    append: yes
+
+- name: set clock local for Windows dual boot system
+  timezone:
+    name: Asia/Tokyo
+    hwclock: local
+
+- name: setting for winbind
+  lineinfile:
+    path: /etc/nsswitch.conf
+    regexp: "dns$"
+    line: "dns wins"
+
+- name: add chrome apt key
+  apt_key:
+    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+    state: present
+
+- name: add chrome apt repository
+  apt_repository:
+    repo: "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+    filename: "google-chrome"
+    state: present
+    update_cache: yes
+
+- name: install google-chrome
+  apt:
+    name: google-chrome-stable
+    state: present
