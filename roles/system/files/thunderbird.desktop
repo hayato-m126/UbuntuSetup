@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Thunderbird
+GenericName=Mail/News Client
+Comment=Mail/News Client
+Exec=/opt/thunderbird/thunderbird
+Icon=/opt/thunderbird/chrome/icons/default/default32.png
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=x-scheme-handler/mailto;

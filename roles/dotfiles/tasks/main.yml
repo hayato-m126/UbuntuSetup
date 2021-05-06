@@ -1,0 +1,8 @@
+---
+- name: clone dotfiles
+  git:
+    repo: https://github.com/hayato-m126/dotfiles.git
+    dest: ~/.dotfiles
+
+# - name: install dotfiles
+#   shell: bash ~/.dotfiles/install.sh

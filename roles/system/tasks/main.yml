@@ -1,0 +1,162 @@
+---
+- name: install system tools using apt
+  become: yes
+  apt:
+    name:
+      - cinnamon-desktop-environment
+      - curl
+      - dconf-editor
+      - dphys-swapfile
+      - gparted
+      - gufw
+      - hardinfo
+      - linux-generic-hwe-20.04
+      - meld
+      - ncdu
+      - terminator
+      - winbind
+      - zstd
+    update_cache: yes
+
+- name: add git ppa
+  become: yes
+  apt_repository:
+    repo: ppa:git-core/ppa
+    state: present
+
+- name: install git latest
+  become: yes
+  apt:
+    name: git
+    update_cache: yes
+
+- name: install grub-customizer
+  become: yes
+  apt:
+    name: grub-customizer
+    update_cache: yes
+
+- name: add fish ppa
+  become: yes
+  apt_repository:
+    repo: ppa:fish-shell/release-3
+    state: present
+
+- name: install fish shell
+  become: yes
+  apt:
+    name: fish
+    update_cache: yes
+
+# - name: install fisher (1/2)
+#   get_url:
+#     url: https://git.io/fisher
+#     dest: /tmp/fisher_install
+
+# - name: install fisher (2/2)
+#   shell: "fish source /tmp/fisher_install && fisher install jorgebucaran/fisher"
+
+# - name: set cinammon env default terminal
+#   dconf:
+#     key: "/org/cinnamon/desktop/applications/terminal"
+#     value: "['exec', 'terminator']"
+#     state: present
+
+# - name: set cinnamon env key custimeze (1/2)
+#   dconf:
+#     key: "/org/cinnamon/desktop/wm/preferences"
+#     value: "['mouse-button-modifier', \"<Super>\"]"
+#     state: present
+
+# - name: set cinnamon env key custimeze (2/2)
+#   dconf:
+#     key: "/org/cinnamon/desktop/wm/preferences"
+#     value: "['mouse-button-zoom-modifier', \"<Super>\"]"
+#     state: present
+
+- name: disable sleep when close note pc dispaly
+  become: yes
+  lineinfile:
+    path: /etc/systemd/logind.conf
+    line: "HandleLidSwitch=ignore"
+    insertafter: EOF
+
+- name: add {{ ansible_user }} to dialout group
+  become: yes
+  user:
+    name: "{{ ansible_user }}"
+    group: dialout
+    append: yes
+
+- name: set clock local for Windows dual boot system
+  become: yes
+  timezone:
+    name: Asia/Tokyo
+    hwclock: local
+
+- name: setting for winbind
+  become: yes
+  replace:
+    path: /etc/nsswitch.conf
+    regexp: " dns$"
+    replace: " dns wins"
+
+- name: add chrome apt key
+  become: yes
+  apt_key:
+    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+    state: present
+
+- name: add chrome apt repository
+  become: yes
+  apt_repository:
+    repo: "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+    filename: "google-chrome"
+    state: present
+
+- name: install google-chrome
+  become: yes
+  apt:
+    name: google-chrome-stable
+    update_cache: yes
+
+- name: install keeweb
+  become: yes
+  apt:
+    deb: https://github.com/keeweb/keeweb/releases/download/v1.17.6/KeeWeb-1.17.6.linux.x64.deb
+    update_cache: yes
+
+# - name: install slack
+#   become: yes
+#   snap:
+#     name: slack
+
+- name: install activitywatch
+  become: yes
+  unarchive:
+    src: https://github.com/ActivityWatch/activitywatch/releases/download/v0.8.0b9/activitywatch-v0.8.0b9-linux-x86_64.zip
+    dest: /opt/
+    remote_src: yes
+
+- name: add autostart directory
+  file:
+    path: ~/.config/autostart
+    state: directory
+
+- name: add autostart activitywatch
+  copy:
+    src: activitywatch.desktop
+    dest: ~/.config/autostart/activitywatch.desktop
+
+- name: install thunderbird
+  become: yes
+  unarchive:
+    src: https://archive.mozilla.org/pub/thunderbird/releases/78.10.1/linux-x86_64/ja/thunderbird-78.10.1.tar.bz2
+    dest: /opt/
+    remote_src: yes
+
+- name: add thunderbird to startmenu
+  copy:
+    src: thunderbird.desktop
+    dest: ~/.local/share/applications/thunderbird.desktop
+

@@ -1,0 +1,41 @@
+---
+- name: install openssh-server
+  become: yes
+  apt:
+    name: openssh-server
+
+- name: update ssh settings (1/6)
+  file:
+    path: ~/.ssh
+    state: directory
+    mode: '700'
+
+- name: update ssh settings (2/6)
+  copy:
+    src: authorized_keys
+    dest: ~/.ssh/authorized_keys
+    mode: '600'
+
+- name: update ssh settings (3/6)
+  replace:
+    path: /etc/ssh/sshd_config
+    regexp: "^#Port 22"
+    replace: "Port {{ port_no }}"
+
+- name: update ssh settings (4/6)
+  replace:
+    path: /etc/ssh/sshd_config
+    regexp: "^#AuthorizedKeysFile"
+    replace: "AuthorizedKeysFile"
+
+- name: update ssh settings (5/6)
+  replace:
+    path: /etc/ssh/sshd_config
+    regexp: "^#PasswordAuthentication yes"
+    replace: "PasswordAuthentication no"
+
+- name: update ssh settings (6/6)
+  replace:
+    path: /etc/ssh/sshd_config
+    regexp: "PermitRootLogin prohibit-password"
+    replace: "PermitRootLogin no"
