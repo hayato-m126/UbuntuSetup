@@ -136,3 +136,9 @@
     group: docker
     append: yes
 
+# - name: install nvidia docker
+#   become: yes
+#   when: nvidia_driver
+#   import_tasks: nvidia_docker
+
+
