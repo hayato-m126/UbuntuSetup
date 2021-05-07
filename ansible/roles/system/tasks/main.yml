@@ -1,4 +1,7 @@
 ---
+- name: use English folder name
+  shell: LANG=C xdg-user-dirs-update --force
+
 - name: install system tools using apt
   become: yes
   apt:
@@ -54,6 +57,12 @@
   dconf:
     key: "/org/cinnamon/desktop/wm/preferences/mouse-button-zoom-modifier"
     value: "'<Super>'"
+    state: present
+
+- name: set start menu favorite
+  dconf:
+    key: "/org/cinnamon/favorite-apps"
+    value: "['firefox.desktop', 'cinnamon-settings.desktop', 'nemo.desktop', 'terminator.desktop']"
     state: present
 
 - name: disable sleep when close note pc dispaly
