@@ -1,0 +1,17 @@
+---
+- name: install asdf
+  git:
+    repo: https://github.com/asdf-vm/asdf.git
+    dest: ~/.asdf
+    version: v0.8.0
+
+- name: make asdf completions (1/2)
+  file:
+    path: ~/.config/fish/completions
+    state: directory
+
+- name: make asdf completions (2/2)
+  file:
+    src: ~/.asdf/completions/asdf.fish
+    dest: ~/.config/fish/completions/asdf.fish
+    state: link

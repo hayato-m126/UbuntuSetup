@@ -1,0 +1,44 @@
+---
+- name: install docker build dependncies
+  become: yes
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg
+      - lsb-release
+    update_cache: yes
+
+- name: add docker apt key
+  become: yes
+  apt_key:
+    url: 'https://download.docker.com/linux/ubuntu/gpg'
+    state: present
+
+- name: add docker repositry
+  become: yes
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+
+- name: install docker
+  become: yes
+  apt:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-compose
+    update_cache: yes
+
+- name: add {{ ansible_user }} to docker group
+  become: yes
+  user:
+    name: "{{ ansible_user }}"
+    group: docker
+    append: yes
+
+# - name: install nvidia docker
+#   become: yes
+#   when: nvidia_driver
+#   import_tasks: nvidia_docker
