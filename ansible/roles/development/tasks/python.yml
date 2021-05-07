@@ -1,0 +1,47 @@
+---
+- name: install pyenv build dependncies
+  become: yes
+  apt:
+    name:
+      - build-essential
+      - libssl-dev
+      - zlib1g-dev
+      - libbz2-dev
+      - libreadline-dev
+      - libsqlite3-dev
+      - wget
+      - curl
+      - llvm
+      - libncurses5-dev
+      - libncursesw5-dev
+      - xz-utils
+      - tk-dev
+      - libffi-dev
+      - liblzma-dev
+      - python-openssl
+      - python3-pip
+      - python3-venv
+    update_cache: yes
+
+- name: install pipx
+  pip:
+    name: pipx
+    executable: pip3
+    extra_args: --user
+
+- name: pipx ensurepath
+  shell: python3 -m pipx ensurepath
+
+# - name: pipx completion
+#   shell: pipx completions
+
+# - name: install argcomplete using pipx
+#   shell: pipx install argcomplete
+
+- name: get poetry install.py
+  get_url:
+    url: https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py
+    dest: /tmp/install-poetry.py
+
+- name: install poetry to default python3
+  shell: python3 /tmp/install-poetry.py

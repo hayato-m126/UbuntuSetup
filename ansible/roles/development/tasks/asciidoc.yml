@@ -6,20 +6,51 @@
       - ruby
     update_cache: yes
 
-- name: install asciidoc module using gem
+- name: install bundler
   become: yes
   gem:
-    name:
-      - bundler
-      - asciidoctor
-      - asciidoctor-pdf-cjk
-      - asciidoctor-diagram
-      - coderay
-      - rouge
-      - concurrent-ruby
+    name: bundler
+    state: latest
+
+- name: isntall asciidoctor
+  become: yes
+  gem:
+    name: asciidoctor
+    state: latest
 
 - name: install pre-relese package
   become: yes
   gem:
     name: asciidoctor-pdf
     pre_release: yes
+    state: latest
+
+- name: install pdf japanese
+  become: yes
+  gem:
+    name: asciidoctor-pdf-cjk
+    state: latest
+
+- name: install diagram
+  become: yes
+  gem:
+    name: asciidoctor-diagram
+    state: latest
+
+- name: install coderay
+  become: yes
+  gem:
+    name: coderay
+    state: latest
+
+- name: install rouge
+  become: yes
+  gem:
+    name: rouge
+    state: latest
+
+- name: install concurrent-ruby
+  become: yes
+  gem:
+    name: concurrent-ruby
+    state: latest

@@ -1,4 +1,7 @@
 ---
+- name: use English folder name
+  shell: LANG=C xdg-user-dirs-update --force
+
 - name: install system tools using apt
   become: yes
   apt:
@@ -36,43 +39,31 @@
     name: grub-customizer
     update_cache: yes
 
-- name: add fish ppa
-  become: yes
-  apt_repository:
-    repo: ppa:fish-shell/release-3
+- import_tasks: fish.yml
+
+- name: set cinammon env default terminal
+  dconf:
+    key: "/org/cinnamon/desktop/applications/terminal/exec"
+    value: "'terminator'"
     state: present
 
-- name: install fish shell
-  become: yes
-  apt:
-    name: fish
-    update_cache: yes
+- name: set cinnamon env key custimeze (1/2)
+  dconf:
+    key: "/org/cinnamon/desktop/wm/preferences/mouse-button-modifier"
+    value: "'<Super>'"
+    state: present
 
-# - name: install fisher (1/2)
-#   get_url:
-#     url: https://git.io/fisher
-#     dest: /tmp/fisher_install
+- name: set cinnamon env key custimeze (2/2)
+  dconf:
+    key: "/org/cinnamon/desktop/wm/preferences/mouse-button-zoom-modifier"
+    value: "'<Super>'"
+    state: present
 
-# - name: install fisher (2/2)
-#   shell: "fish source /tmp/fisher_install && fisher install jorgebucaran/fisher"
-
-# - name: set cinammon env default terminal
-#   dconf:
-#     key: "/org/cinnamon/desktop/applications/terminal"
-#     value: "['exec', 'terminator']"
-#     state: present
-
-# - name: set cinnamon env key custimeze (1/2)
-#   dconf:
-#     key: "/org/cinnamon/desktop/wm/preferences"
-#     value: "['mouse-button-modifier', \"<Super>\"]"
-#     state: present
-
-# - name: set cinnamon env key custimeze (2/2)
-#   dconf:
-#     key: "/org/cinnamon/desktop/wm/preferences"
-#     value: "['mouse-button-zoom-modifier', \"<Super>\"]"
-#     state: present
+- name: set start menu favorite
+  dconf:
+    key: "/org/cinnamon/favorite-apps"
+    value: "['firefox.desktop', 'cinnamon-settings.desktop', 'nemo.desktop', 'terminator.desktop']"
+    state: present
 
 - name: disable sleep when close note pc dispaly
   become: yes
