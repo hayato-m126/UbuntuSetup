@@ -6,6 +6,3 @@
 
 - name: install dotfiles
   shell: bash ~/.dotfiles/install.sh
-
-# - name: install asdf and pipx package
-#   shell: bash install.sh
