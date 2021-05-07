@@ -45,3 +45,6 @@
 
 - name: install poetry to default python3
   shell: python3 /tmp/install-poetry.py
+
+- name: poetry setting
+  shell: poetry config virtualenvs.in-project true
