@@ -10,6 +10,3 @@
   apt:
     name: fish
     update_cache: yes
-
-# - name: install fisher
-#   shell: fish fisher.sh
