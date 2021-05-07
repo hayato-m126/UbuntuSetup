@@ -56,23 +56,23 @@
 # - name: install fisher (2/2)
 #   shell: "fish source /tmp/fisher_install && fisher install jorgebucaran/fisher"
 
-# - name: set cinammon env default terminal
-#   dconf:
-#     key: "/org/cinnamon/desktop/applications/terminal"
-#     value: "['exec', 'terminator']"
-#     state: present
+- name: set cinammon env default terminal
+  dconf:
+    key: "/org/cinnamon/desktop/applications/terminal/exec"
+    value: "'terminator'"
+    state: present
 
-# - name: set cinnamon env key custimeze (1/2)
-#   dconf:
-#     key: "/org/cinnamon/desktop/wm/preferences"
-#     value: "['mouse-button-modifier', \"<Super>\"]"
-#     state: present
+- name: set cinnamon env key custimeze (1/2)
+  dconf:
+    key: "/org/cinnamon/desktop/wm/preferences/mouse-button-modifier"
+    value: "'<Super>'"
+    state: present
 
-# - name: set cinnamon env key custimeze (2/2)
-#   dconf:
-#     key: "/org/cinnamon/desktop/wm/preferences"
-#     value: "['mouse-button-zoom-modifier', \"<Super>\"]"
-#     state: present
+- name: set cinnamon env key custimeze (2/2)
+  dconf:
+    key: "/org/cinnamon/desktop/wm/preferences/mouse-button-zoom-modifier"
+    value: "'<Super>'"
+    state: present
 
 - name: disable sleep when close note pc dispaly
   become: yes
