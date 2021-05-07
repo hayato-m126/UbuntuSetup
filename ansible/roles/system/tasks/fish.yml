@@ -11,10 +11,5 @@
     name: fish
     update_cache: yes
 
-# - name: install fisher (1/2)
-#   get_url:
-#     url: https://git.io/fisher
-#     dest: /tmp/fisher_install
-
-# - name: install fisher (2/2)
-#   shell: "fish source /tmp/fisher_install && fisher install jorgebucaran/fisher"
+# - name: install fisher
+#   shell: fish fisher.sh

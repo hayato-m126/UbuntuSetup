@@ -151,5 +151,3 @@
     src: thunderbird.desktop
     dest: ~/.local/share/applications/thunderbird.desktop
 
-- import_tasks: dotfiles.yml
-
