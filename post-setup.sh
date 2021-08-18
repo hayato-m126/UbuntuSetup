@@ -12,5 +12,6 @@ asdf install
 
 pipx completions
 pipx install argcomplete
+pipx install yq
 
 poetry config virtualenvs.in-project true
