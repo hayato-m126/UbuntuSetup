@@ -14,6 +14,7 @@
       - fontawesome_markdown
       - markdown
       - mdx_unimoji
+      - mdx_truly_sane_lists
       - mkdocs
       - mkdocs-exclude
       - mkdocs-material
