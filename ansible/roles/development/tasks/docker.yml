@@ -38,6 +38,12 @@
     group: docker
     append: yes
 
+- name: kubectl
+  become: yes
+  snap:
+    name: kubectl
+    classic: yes
+
 # - name: install nvidia docker
 #   become: yes
 #   when: nvidia_driver

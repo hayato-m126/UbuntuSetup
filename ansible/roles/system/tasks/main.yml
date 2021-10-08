@@ -117,10 +117,11 @@
     deb: https://github.com/keeweb/keeweb/releases/download/v1.17.6/KeeWeb-1.17.6.linux.x64.deb
     update_cache: yes
 
-# - name: install slack
-#   become: yes
-#   snap:
-#     name: slack
+- name: install slack
+  become: yes
+  snap:
+    name: slack
+    classic: yes
 
 - name: install activitywatch
   become: yes
