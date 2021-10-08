@@ -7,11 +7,15 @@
       - cmake-curses-gui
     update_cache: yes
 
+- name: install yq
+  become: yes
+  snap:
+    name: yq
+
 - import_tasks: vscode.yml
 - import_tasks: asdf.yml
 - import_tasks: python.yml
 - import_tasks: docker.yml
-- import_tasks: mkdocs.yml
 # - import_tasks: asciidoc.yml
 
 
