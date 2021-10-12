@@ -9,6 +9,7 @@ asdf plugin add golang
 asdf plugin add nodejs
 asdf plugin add python
 asdf plugin add awscli
+asdf plugin add kubectl
 asdf install
 
 pipx completions
