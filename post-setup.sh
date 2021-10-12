@@ -8,6 +8,7 @@ asdf plugin add ghq
 asdf plugin add golang
 asdf plugin add nodejs
 asdf plugin add python
+asdf plugin add awscli
 asdf install
 
 pipx completions
