@@ -1,5 +1,5 @@
 ---
-- name: install pyenv build dependncies
+- name: install pyenv build dependencies
   become: yes
   apt:
     name:

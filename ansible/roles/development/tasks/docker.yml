@@ -1,5 +1,5 @@
 ---
-- name: install docker build dependncies
+- name: install docker build dependencies
   become: yes
   apt:
     name:
@@ -16,7 +16,7 @@
     url: 'https://download.docker.com/linux/ubuntu/gpg'
     state: present
 
-- name: add docker repositry
+- name: add docker repository
   become: yes
   apt_repository:
     repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"

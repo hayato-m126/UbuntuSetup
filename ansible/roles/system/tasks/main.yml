@@ -41,19 +41,19 @@
 
 - import_tasks: fish.yml
 
-- name: set cinammon env default terminal
+- name: set cinnamon env default terminal
   dconf:
     key: "/org/cinnamon/desktop/applications/terminal/exec"
     value: "'terminator'"
     state: present
 
-- name: set cinnamon env key custimeze (1/2)
+- name: set cinnamon env key customize (1/2)
   dconf:
     key: "/org/cinnamon/desktop/wm/preferences/mouse-button-modifier"
     value: "'<Super>'"
     state: present
 
-- name: set cinnamon env key custimeze (2/2)
+- name: set cinnamon env key customize (2/2)
   dconf:
     key: "/org/cinnamon/desktop/wm/preferences/mouse-button-zoom-modifier"
     value: "'<Super>'"
@@ -65,7 +65,7 @@
     value: "['firefox.desktop', 'cinnamon-settings.desktop', 'nemo.desktop', 'terminator.desktop']"
     state: present
 
-- name: disable sleep when close note pc dispaly
+- name: disable sleep when close note pc display
   become: yes
   lineinfile:
     path: /etc/systemd/logind.conf
