@@ -13,6 +13,7 @@
       - gparted
       - gufw
       - hardinfo
+      - htop
       - linux-generic-hwe-20.04
       - meld
       - ncdu
