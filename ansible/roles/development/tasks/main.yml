@@ -5,6 +5,7 @@
     name:
       - cmake
       - cmake-curses-gui
+      - sqlitebrowser
     update_cache: yes
 
 - import_tasks: vscode.yml
