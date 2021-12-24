@@ -47,3 +47,9 @@
 
 - name: install poetry to default python3
   shell: python3 /tmp/install-poetry.py
+
+- name: install pre-commit
+  pip:
+    name: pre-commit
+    executable: pip3
+    extra_args: --user

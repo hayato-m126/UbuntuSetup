@@ -1,11 +1,12 @@
 ---
-- name: install make tools
+- name: install develop tools
   become: yes
   apt:
     name:
       - cmake
       - cmake-curses-gui
       - sqlitebrowser
+      - shellcheck
     update_cache: yes
 
 - import_tasks: vscode.yml
