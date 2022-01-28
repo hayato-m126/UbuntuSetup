@@ -1,0 +1,50 @@
+- name: add LTTng ppa
+  become: yes
+  apt_repository:
+    repo: ppa:lttng/stable-2.12
+    state: present
+
+- name: install LTTng packages using apt
+  become: yes
+  apt:
+    name:
+      - lttng-tools
+      - lttng-modules-dkms
+      - liblttng-ust-dev
+      - python3-babeltrace
+      - python3-lttng
+    update_cache: yes
+
+- name: install ros-trace packages using apt
+  become: yes
+  apt:
+    name:
+      - ros-galactic-ros2trace
+      - ros-galactic-ros2trace-analysis
+      - ros-galactic-tracetools
+      - ros-galactic-tracetools-analysis
+      - ros-galactic-tracetools-launch
+      - ros-galactic-tracetools-read
+      - ros-galactic-tracetools-test
+      - ros-galactic-tracetools-trace
+    update_cache: yes
+
+- name: install caret dependencies using apt
+  become: yes
+  apt:
+    name:
+      - graphviz
+      - graphviz-dev
+    update_cache: yes
+
+- name: install caret dependencies using pip
+  pip:
+    name:
+      - pytest-mock
+      - pybind11
+      - pandas
+      - bokeh
+      - jupyterlab
+      - graphviz
+    executable: pip3
+    extra_args: --user
