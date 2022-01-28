@@ -23,6 +23,9 @@
       - python-openssl
       - python3-pip
       - python3-venv
+      - python3-flake8
+      - python3-pytest-cov
+      - python3-setuptools
     update_cache: yes
 
 - name: install pipx
@@ -48,8 +51,22 @@
 - name: install poetry to default python3
   shell: python3 /tmp/install-poetry.py
 
-- name: install pre-commit
+- name: install pip packages
   pip:
-    name: pre-commit
+    name:
+      - pre-commit
+      - flake8-blind-except
+      - flake8-builtins
+      - flake8-class-newline
+      - flake8-comprehensions
+      - flake8-deprecated
+      - flake8-docstrings
+      - flake8-import-order
+      - flake8-quotes
+      - pytest-repeat
+      - pytest-rerunfailures
+      - pytest
+      - setuptools
+      - colorcet
     executable: pip3
     extra_args: --user
