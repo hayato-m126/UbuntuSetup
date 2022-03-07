@@ -12,6 +12,7 @@ asdf plugin add awscli
 asdf plugin add kubectl
 asdf plugin add yq
 asdf plugin add asciidoctorj
+asdf plugin add ripgrep
 asdf install
 
 pipx completions
