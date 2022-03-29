@@ -68,5 +68,6 @@
       - pytest
       - setuptools
       - colorcet
+      - cfn-lint
     executable: pip3
     extra_args: --user

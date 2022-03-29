@@ -6,6 +6,7 @@
       - cmake
       - cmake-curses-gui
       - sqlitebrowser
+      - upx
     update_cache: yes
 
 - import_tasks: vscode.yml
