@@ -34,11 +34,11 @@
     name: git
     update_cache: yes
 
-- name: install grub-customizer
-  become: yes
-  apt:
-    name: grub-customizer
-    update_cache: yes
+# - name: install grub-customizer
+#   become: yes
+#   apt:
+#     name: grub-customizer
+#     update_cache: yes
 
 - import_tasks: fish.yml
 

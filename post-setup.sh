@@ -16,6 +16,4 @@ asdf plugin add ripgrep
 asdf install
 
 pipx completions
-pipx install argcomplete
-
 poetry config virtualenvs.in-project true
