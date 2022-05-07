@@ -19,7 +19,7 @@
 - name: add docker repository
   become: yes
   apt_repository:
-    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable"
 
 - name: install docker
   become: yes
@@ -38,20 +38,20 @@
     group: docker
     append: yes
 
-- name: get minikube binary
-  get_url:
-    url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-    dest: /tmp/minikube-linux-amd64
+# - name: get minikube binary
+#   get_url:
+#     url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+#     dest: /tmp/minikube-linux-amd64
 
-- name: install minikube
-  become: yes
-  shell: install /tmp/minikube-linux-amd64 /usr/local/bin/minikube
+# - name: install minikube
+#   become: yes
+#   shell: install /tmp/minikube-linux-amd64 /usr/local/bin/minikube
 
-- name: add minikube dependency
-  become: yes
-  apt:
-    name:
-      - conntrack
+# - name: add minikube dependency
+#   become: yes
+#   apt:
+#     name:
+#       - conntrack
 
 # - name: install nvidia docker
 #   become: yes

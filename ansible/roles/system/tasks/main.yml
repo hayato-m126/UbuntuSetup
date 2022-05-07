@@ -14,10 +14,11 @@
       - gufw
       - hardinfo
       - htop
-      - linux-generic-hwe-20.04
+      - linux-generic-hwe-22.04
       - meld
       - ncdu
       - terminator
+      - thunderbird
       - winbind
       - zstd
     update_cache: yes
@@ -134,16 +135,3 @@
   copy:
     src: activitywatch.desktop
     dest: ~/.config/autostart/activitywatch.desktop
-
-- name: install thunderbird
-  become: yes
-  unarchive:
-    src: https://archive.mozilla.org/pub/thunderbird/releases/91.6.1/linux-x86_64/ja/thunderbird-91.6.1.tar.bz2
-    dest: /opt/
-    remote_src: yes
-
-- name: add thunderbird to startmenu
-  copy:
-    src: thunderbird.desktop
-    dest: ~/.local/share/applications/thunderbird.desktop
-
