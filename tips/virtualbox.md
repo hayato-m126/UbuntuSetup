@@ -9,6 +9,7 @@ Guest Additionsのディスクをマウントするとビルドしてインス�
 
 ```
 sudo apt install gcc make
+sudo apt install -y build-essential linux-headers-$(uname -r)
 ```
 
 ## ファイル共有
