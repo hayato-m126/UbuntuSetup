@@ -24,15 +24,10 @@
       - shutter
       - simplescreenrecorder
       - vlc
-      - kolourpaint4
+      - kolourpaint
       - ffmpeg
       - peek
     update_cache: yes
-
-- name: install irfanview using snap
-  become: yes
-  snap:
-    name: irfanview
 
 - name: get calibre install script
   get_url:

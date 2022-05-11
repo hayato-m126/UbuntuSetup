@@ -20,7 +20,7 @@
       - libxmlsec1-dev
       - libffi-dev
       - liblzma-dev
-      - python-openssl
+      - python3-openssl
       - python3-pip
       - python3-venv
       - python3-flake8
