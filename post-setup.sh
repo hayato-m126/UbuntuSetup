@@ -13,6 +13,7 @@ asdf plugin add kubectl
 asdf plugin add yq
 asdf plugin add asciidoctorj
 asdf plugin add ripgrep
+asdf plugin add aws-sam-cli
 asdf install
 
 pipx completions
