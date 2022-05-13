@@ -14,3 +14,16 @@
 - import_tasks: python.yml
 - import_tasks: docker.yml
 #- import_tasks: ros2-analysis.yml
+
+- name: copy cyclonedds.conf for ros2
+  become: yes
+  copy:
+    src: 60_cyclonedds.conf
+    dest: /etc/sysctl.d/60_cyclonedds.conf
+
+- name: change ifconfig permission
+  become: yes
+  file:
+    path: /usr/sbin/ifconfig
+    mode: 04755
+    # why 04755 refer https://github.com/ansible/ansible/issues/13115
