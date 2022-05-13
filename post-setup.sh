@@ -2,6 +2,8 @@
 
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
+# source asdf to use asdf command temporary
+bass source $HOME/.asdf/asdf.sh
 asdf plugin add direnv
 asdf plugin add fzf
 asdf plugin add ghq
@@ -20,3 +22,4 @@ pipx completions
 pipx install argcomplete
 
 poetry config virtualenvs.in-project true
+

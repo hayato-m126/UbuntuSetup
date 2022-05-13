@@ -8,7 +8,7 @@ Guest Additionsのディスクをマウントするとビルドしてインス�
 特にエラーとかでなくハマるので先に以下を実行しておく
 
 ```
-sudo apt install gcc make
+sudo apt install build-essential
 ```
 
 ## ファイル共有
