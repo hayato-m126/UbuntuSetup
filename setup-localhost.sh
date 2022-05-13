@@ -22,12 +22,12 @@ asdf plugin add asciidoctorj
 asdf plugin add ripgrep
 asdf plugin add aws-sam-cli
 
+pipx install argcomplete # pip3 install argcomplete not working
 poetry config virtualenvs.in-project true
 
 ./fish_prepare.sh
 
-cd $HOME/.dotfiles
-./install.sh
+bash $HOME/.dotfiles/install.sh
 
 # commands below needs source .bashrc
 asdf install
