@@ -31,4 +31,4 @@ cd $HOME/.dotfiles
 
 # commands below needs source .bashrc
 asdf install
-fish fisher update
+./fisher_update.sh
