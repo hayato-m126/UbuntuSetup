@@ -16,6 +16,7 @@
       - htop
       - linux-generic-hwe-20.04
       - meld
+      - net-tools
       - ncdu
       - terminator
       - thunderbird-locale-ja
