@@ -69,5 +69,6 @@
       - setuptools
       - colorcet
       - cfn-lint
+      - argcomplete
     executable: pip3
     extra_args: --user
