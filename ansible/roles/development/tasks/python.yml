@@ -76,5 +76,6 @@
       - colorcet
       - cfn-lint
       - argcomplete
+      - vcstool
     executable: pip3
     extra_args: --user
