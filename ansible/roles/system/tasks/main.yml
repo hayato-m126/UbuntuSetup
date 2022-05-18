@@ -75,13 +75,6 @@
     line: "HandleLidSwitch=ignore"
     insertafter: EOF
 
-- name: add {{ ansible_user }} to dialout group
-  become: yes
-  user:
-    name: "{{ ansible_user }}"
-    group: dialout
-    append: yes
-
 - name: set clock local for Windows dual boot system
   become: yes
   timezone:
