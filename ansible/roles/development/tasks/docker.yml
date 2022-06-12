@@ -35,7 +35,7 @@
   become: yes
   user:
     name: "{{ ansible_user }}"
-    group: docker
+    groups: docker
     append: yes
 
 # - name: install nvidia docker

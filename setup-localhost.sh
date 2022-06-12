@@ -12,4 +12,5 @@ if [ "$ansible_version" != "5" ]; then
     pip3 install -U "ansible==5.*"
 fi
 
+export PATH="$PATH:$HOME/.local/bin"
 ansible-playbook -i ansible/inventories/localhost.ini ansible/setup-ubuntu22.04.yml --ask-become-pass -e ansible_user=$USER
