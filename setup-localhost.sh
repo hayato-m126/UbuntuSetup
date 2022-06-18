@@ -1,33 +1,16 @@
 #!/bin/bash
 
-if !(command -v ansible-playbook  > /dev/null 2>&1); then
-    sudo apt -y update
-    sudo apt -y upgrade
-    sudo apt install -y ansible
+if ! (command -v pip3 >/dev/null 2>&1); then
+    sudo apt-get -y update
+    sudo apt-get -y install python3-pip
 fi
 
-ansible-playbook -i ansible/inventories/localhost.ini ansible/setup-ubuntu20.04.yml --ask-become-pass -e ansible_user=$USER
+# Install ansible
+ansible_version=$(pip3 list | grep -oP "^ansible\s+\K([0-9]+)" || true)
+if [ "$ansible_version" != "5" ]; then
+    sudo apt-get -y purge ansible
+    pip3 install -U "ansible==5.*"
+fi
 
-source $HOME/.asdf/asdf.sh
-asdf plugin add direnv
-asdf plugin add fzf
-asdf plugin add ghq
-asdf plugin add golang
-asdf plugin add nodejs
-asdf plugin add python
-asdf plugin add awscli
-asdf plugin add kubectl
-asdf plugin add yq
-asdf plugin add asciidoctorj
-asdf plugin add ripgrep
-asdf plugin add aws-sam-cli
-
-poetry config virtualenvs.in-project true
-
-./fish_prepare.sh
-
-bash $HOME/.dotfiles/install.sh
-
-# commands below needs source .bashrc
-asdf install
-./fisher_update.sh
+export PATH="$PATH:$HOME/.local/bin"
+ansible-playbook -i ansible/inventories/localhost.ini ansible/setup-ubuntu22.04.yml --ask-become-pass -e ansible_user=$USER

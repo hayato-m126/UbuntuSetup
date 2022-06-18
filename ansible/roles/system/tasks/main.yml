@@ -14,7 +14,7 @@
       - gufw
       - hardinfo
       - htop
-      - linux-generic-hwe-20.04
+      - linux-generic-hwe-22.04
       - meld
       - net-tools
       - ncdu
@@ -36,11 +36,11 @@
     name: git
     update_cache: yes
 
-- name: install grub-customizer
-  become: yes
-  apt:
-    name: grub-customizer
-    update_cache: yes
+# - name: install grub-customizer
+#   become: yes
+#   apt:
+#     name: grub-customizer
+#     update_cache: yes
 
 - import_tasks: fish.yml
 
@@ -74,13 +74,6 @@
     path: /etc/systemd/logind.conf
     line: "HandleLidSwitch=ignore"
     insertafter: EOF
-
-- name: add {{ ansible_user }} to dialout group
-  become: yes
-  user:
-    name: "{{ ansible_user }}"
-    group: dialout
-    append: yes
 
 - name: set clock local for Windows dual boot system
   become: yes
