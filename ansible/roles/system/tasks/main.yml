@@ -110,8 +110,17 @@
 - name: install keeweb
   become: yes
   apt:
-    deb: https://github.com/keeweb/keeweb/releases/download/v1.17.6/KeeWeb-1.17.6.linux.x64.deb
+    deb: https://github.com/keeweb/keeweb/releases/download/v1.18.7/KeeWeb-1.18.7.linux.x64.deb
     update_cache: yes
+
+- name: update keeweb setting to use in gpu environment
+  become: yes
+  lineinfile:
+    path: /usr/share/applications/keeweb.desktop
+    line: "Exec=keeweb --no-sandbox %u"
+    state: present
+    backrefs: yes
+    regexp: 'Exec=keeweb %u'
 
 - name: install activitywatch
   become: yes
