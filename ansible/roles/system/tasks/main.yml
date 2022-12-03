@@ -36,11 +36,17 @@
     name: git
     update_cache: yes
 
-# - name: install grub-customizer
-#   become: yes
-#   apt:
-#     name: grub-customizer
-#     update_cache: yes
+- name: add grub-customizer ppa
+  become: yes
+  apt_repository:
+    repo: ppa:trebelnik-stefina/grub-customizer
+    state: present
+
+- name: install grub-customizer
+  become: yes
+  apt:
+    name: grub-customizer
+    update_cache: yes
 
 - import_tasks: fish.yml
 
