@@ -8,9 +8,7 @@ asdf plugin add golang
 asdf plugin add nodejs
 asdf plugin add python
 asdf plugin add awscli
-asdf plugin add kubectl
 asdf plugin add yq
-asdf plugin add asciidoctorj
 asdf plugin add ripgrep
 asdf plugin add aws-sam-cli
 
