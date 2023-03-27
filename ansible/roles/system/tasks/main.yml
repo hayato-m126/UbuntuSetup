@@ -10,6 +10,7 @@
       - curl
       - dconf-editor
       - dphys-swapfile
+      - exfatprogs
       - gparted
       - gufw
       - hardinfo
