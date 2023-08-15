@@ -128,20 +128,3 @@
     state: present
     backrefs: yes
     regexp: 'Exec=keeweb %u'
-
-- name: install activitywatch
-  become: yes
-  unarchive:
-    src: https://github.com/ActivityWatch/activitywatch/releases/download/v0.8.0b9/activitywatch-v0.8.0b9-linux-x86_64.zip
-    dest: /opt/
-    remote_src: yes
-
-- name: add autostart directory
-  file:
-    path: ~/.config/autostart
-    state: directory
-
-- name: add autostart activitywatch
-  copy:
-    src: activitywatch.desktop
-    dest: ~/.config/autostart/activitywatch.desktop
