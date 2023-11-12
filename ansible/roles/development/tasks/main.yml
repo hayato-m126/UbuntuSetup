@@ -8,6 +8,7 @@
       - sqlitebrowser
       - upx
       - ccache
+      - okteta
     update_cache: yes
 
 - import_tasks: vscode.yml
