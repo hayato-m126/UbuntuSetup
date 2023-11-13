@@ -19,7 +19,7 @@
 - name: add docker repository
   become: yes
   apt_repository:
-    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable"
 
 - name: install docker
   become: yes
@@ -28,14 +28,14 @@
       - docker-ce
       - docker-ce-cli
       - containerd.io
-      - docker-compose
+      - docker-compose-plugin
     update_cache: yes
 
 - name: add {{ ansible_user }} to docker group
   become: yes
   user:
     name: "{{ ansible_user }}"
-    group: docker
+    groups: docker
     append: yes
 
 # - name: install nvidia docker

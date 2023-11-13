@@ -20,10 +20,14 @@
       - libxmlsec1-dev
       - libffi-dev
       - liblzma-dev
+    update_cache: yes
+
+- name: install python packages via apt
+  become: yes
+  apt:
+    name:
       - python3-openssl
-      - python3-pip
       - python3-venv
-      - python3-flake8
       - python3-pytest-cov
       - python3-setuptools
     update_cache: yes
@@ -43,3 +47,21 @@
 # - name: install argcomplete using pipx
 #   shell: pipx install argcomplete
 
+- name: install poetry
+  shell: curl -sSL https://install.python-poetry.org | python3 -
+
+- name: install pip packages
+  pip:
+    name:
+      - pre-commit
+      - ruff
+      - pytest-repeat
+      - pytest-rerunfailures
+      - pytest
+      - setuptools
+      - colorcet
+      - cfn-lint
+      - argcomplete
+      - vcstool
+    executable: pip3
+    extra_args: --user

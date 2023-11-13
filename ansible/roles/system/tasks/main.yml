@@ -10,11 +10,12 @@
       - curl
       - dconf-editor
       - dphys-swapfile
+      - exfatprogs
       - gparted
       - gufw
       - hardinfo
       - htop
-      - linux-generic-hwe-20.04
+      - linux-generic-hwe-22.04
       - meld
       - net-tools
       - ncdu
@@ -35,6 +36,12 @@
   apt:
     name: git
     update_cache: yes
+
+- name: add grub-customizer ppa
+  become: yes
+  apt_repository:
+    repo: ppa:trebelnik-stefina/grub-customizer
+    state: present
 
 - name: install grub-customizer
   become: yes
@@ -75,13 +82,6 @@
     line: "HandleLidSwitch=ignore"
     insertafter: EOF
 
-- name: add {{ ansible_user }} to dialout group
-  become: yes
-  user:
-    name: "{{ ansible_user }}"
-    group: dialout
-    append: yes
-
 - name: set clock local for Windows dual boot system
   become: yes
   timezone:
@@ -95,3 +95,36 @@
     regexp: " dns$"
     replace: " dns wins"
 
+- name: add chrome apt key
+  become: yes
+  apt_key:
+    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+    state: present
+
+- name: add chrome apt repository
+  become: yes
+  apt_repository:
+    repo: "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+    filename: "google-chrome"
+    state: present
+
+- name: install google-chrome
+  become: yes
+  apt:
+    name: google-chrome-stable
+    update_cache: yes
+
+- name: install keeweb
+  become: yes
+  apt:
+    deb: https://github.com/keeweb/keeweb/releases/download/v1.18.7/KeeWeb-1.18.7.linux.x64.deb
+    update_cache: yes
+
+- name: update keeweb setting to use in gpu environment
+  become: yes
+  lineinfile:
+    path: /usr/share/applications/keeweb.desktop
+    line: "Exec=keeweb --no-sandbox %u"
+    state: present
+    backrefs: yes
+    regexp: 'Exec=keeweb %u'
