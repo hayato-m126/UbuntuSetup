@@ -7,5 +7,5 @@ poetry config virtualenvs.in-project true
 bash $HOME/.dotfiles/install.sh
 
 # commands below needs source .bashrc
-# mise install
+mise install
 ./fisher_update.sh

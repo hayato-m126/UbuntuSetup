@@ -17,6 +17,9 @@
 - import_tasks: rust.yml
 #- import_tasks: ros2-analysis.yml
 
+- name: install mise
+  shell: curl https://mise.jdx.dev/install.sh | sh
+
 - name: copy cyclonedds.conf for ros2
   become: yes
   copy:
