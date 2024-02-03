@@ -47,3 +47,6 @@
       - vcstool
     executable: pip3
     extra_args: --user
+
+- name: install rye
+  shell: curl -sSf https://rye-up.com/get | bash
