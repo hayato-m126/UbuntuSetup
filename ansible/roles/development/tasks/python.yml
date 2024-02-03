@@ -32,24 +32,6 @@
       - python3-setuptools
     update_cache: yes
 
-- name: install pipx
-  pip:
-    name: pipx
-    executable: pip3
-    extra_args: --user
-
-- name: pipx ensurepath
-  shell: python3 -m pipx ensurepath
-
-# - name: pipx completion
-#   shell: pipx completions
-
-# - name: install argcomplete using pipx
-#   shell: pipx install argcomplete
-
-- name: install poetry
-  shell: curl -sSL https://install.python-poetry.org | python3 -
-
 - name: install pip packages
   pip:
     name:
