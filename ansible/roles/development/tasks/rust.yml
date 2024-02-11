@@ -19,3 +19,11 @@
   shell: /tmp/sh.rustup.rs -y
   tags:
     - rust
+
+- name: install cargo-binstall
+  become: yes
+  shell: curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+
+- name: install jujutsu
+  become: yes
+  shell: cargo binstall --strategies crate-meta-data jj-cli
