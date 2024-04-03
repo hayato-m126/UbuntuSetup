@@ -50,3 +50,6 @@
 
 - name: install rye
   shell: curl -sSf https://rye-up.com/get | bash
+
+- name: install uv
+  shell: curl -LsSf https://astral.sh/uv/install.sh | sh
