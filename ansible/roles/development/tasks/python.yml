@@ -40,11 +40,11 @@
       - pytest-repeat
       - pytest-rerunfailures
       - pytest
-      - setuptools
       - colorcet
       - cfn-lint
       - argcomplete
       - vcstool
+      - kaggle
     executable: pip3
     extra_args: --user
 
