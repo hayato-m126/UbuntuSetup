@@ -13,3 +13,8 @@ https://www.ubuntulinux.jp/download/ja-remix
 ```shell
 ./setup-localhost.sh
 ```
+
+## TODO
+
+- [] ansibleのバージョン上げる
+- [] ubuntu 24.04に対応させる
