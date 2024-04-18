@@ -11,12 +11,11 @@ fi
 source $HOME/.rye/env
 if ! (command -v ansible-playbook >/dev/null 2>&1); then
     # to avoid install ansible directory
-    # ERROR: ansible@ file:///app/UbuntuSetup/ansible from file:///app/UbuntuSetup/ansible does not appear to be a Python project: neither 'setup.py' nor 'pyproject.toml' found.
+    # ERROR: ansible@ file:///UbuntuSetup/ansible from file:///UbuntuSetup/ansible does not appear to be a Python project: neither 'setup.py' nor 'pyproject.toml' found.
     cd tips
-    # ansible directory to be renamed.
     rye install ansible
     cd ../
 fi
 export PATH=$HOME/.rye/tools/ansible/bin:$PATH
 # dockerの場合とか考えると、パスワード聞かれるの都合悪い。TODO
-ansible-playbook -i ansible/inventories/localhost.ini ansible/setup-ubuntu22.04.yml --ask-become-pass -e ansible_user=$USER -t dotfiles
+ansible-playbook -i ansible/inventories/localhost.ini ansible/setup-ubuntu22.04.yml --ask-become-pass -e ansible_user=$USER
