@@ -1,4 +1,10 @@
 ---
+- name: install git latest
+  become: yes
+  apt:
+    name: git
+    update_cache: yes
+
 - name: clone dotfiles
   git:
     repo: https://github.com/hayato-m126/dotfiles.git

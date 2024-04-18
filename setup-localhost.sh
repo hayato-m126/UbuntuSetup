@@ -1,16 +1,15 @@
 #!/bin/bash
 
-if ! (command -v pip3 >/dev/null 2>&1); then
-    sudo apt-get -y update
-    sudo apt-get -y install python3-pip
+if ! (command -v curl >/dev/null 2>&1); then
+    sudo apt install curl
 fi
-
-# Install ansible
-ansible_version=$(pip3 list | grep -oP "^ansible\s+\K([0-9]+)" || true)
-if [ "$ansible_version" != "5" ]; then
-    sudo apt-get -y purge ansible
-    pip3 install -U "ansible==5.*"
+if ! (command -v rye >/dev/null 2>&1); then
+    # https://rye-up.com/guide/installation/#customized-installation
+    curl -sSf https://rye-up.com/get | RYE_INSTALL_OPTION="--yes" bash
 fi
-
-export PATH="$PATH:$HOME/.local/bin"
-ansible-playbook -i ansible/inventories/localhost.ini ansible/setup-ubuntu22.04.yml --ask-become-pass -e ansible_user=$USER
+if ! (command -v ansible-playbook >/dev/null 2>&1); then
+    source $HOME/.rye/env
+    rye install ansible
+    export PATH=$HOME/.rye/tools/ansible/bin:$PATH
+fi
+ansible-playbook -i ansible/inventories/localhost.ini ansible/setup-ubuntu22.04.yml --ask-become-pass -e ansible_user=$USER -t dotfiles
