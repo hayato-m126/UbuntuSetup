@@ -16,6 +16,9 @@ https://www.ubuntulinux.jp/download/ja-remix
 
 ## TODO
 
-- [] pip install を rye installに変更
+- [] ansible 2.10以降に対応させる
+- [] pip install でコマンドが追加されるタイプのやつは rye installに変更 ansible, argcompleteとか
+- [] wslのセットアップをinventoryで分けるかhost: wslみたいな感じか、なんかしらの方法でwslだけのセットアップが実行出来るようにする
+- [] wslのブラウザ
 - [] pyenvの都合で入れていたツールをryeにすることで不要そうなら消す
 - [] ubuntu 24.04に対応させる

@@ -10,11 +10,7 @@ if ! (command -v rye >/dev/null 2>&1); then
 fi
 source $HOME/.rye/env
 if ! (command -v ansible-playbook >/dev/null 2>&1); then
-    # to avoid install ansible directory
-    # ERROR: ansible@ file:///UbuntuSetup/ansible from file:///UbuntuSetup/ansible does not appear to be a Python project: neither 'setup.py' nor 'pyproject.toml' found.
-    cd tips
-    rye install ansible
-    cd ../
+    rye install ansible-core
 fi
 export PATH=$HOME/.rye/tools/ansible/bin:$PATH
 # dockerの場合とか考えると、パスワード聞かれるの都合悪い。TODO
