@@ -1,37 +1,4 @@
 ---
-- name: install pyenv build dependencies
-  become: yes
-  apt:
-    name:
-      - make
-      - build-essential
-      - libssl-dev
-      - zlib1g-dev
-      - libbz2-dev
-      - libreadline-dev
-      - libsqlite3-dev
-      - wget
-      - curl
-      - llvm
-      - libncursesw5-dev
-      - xz-utils
-      - tk-dev
-      - libxml2-dev
-      - libxmlsec1-dev
-      - libffi-dev
-      - liblzma-dev
-    update_cache: yes
-
-- name: install python packages via apt
-  become: yes
-  apt:
-    name:
-      - python3-openssl
-      - python3-venv
-      - python3-pytest-cov
-      - python3-setuptools
-    update_cache: yes
-
 - name: install pip packages
   pip:
     name:
@@ -41,15 +8,8 @@
       - pytest-rerunfailures
       - pytest
       - colorcet
-      - cfn-lint
       - argcomplete
       - vcstool
       - kaggle
     executable: pip3
     extra_args: --user
-
-- name: install rye
-  shell: curl -sSf https://rye-up.com/get | bash
-
-- name: install uv
-  shell: curl -LsSf https://astral.sh/uv/install.sh | sh
