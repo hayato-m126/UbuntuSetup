@@ -9,3 +9,13 @@
   git:
     repo: https://github.com/hayato-m126/dotfiles.git
     dest: ~/.dotfiles
+
+- name: create .ssh directory
+  file:
+    path: "~/.ssh"
+    state: directory
+
+- name: copy known_hosts
+  file:
+    src: known_hosts
+    state: "~/.ssh"

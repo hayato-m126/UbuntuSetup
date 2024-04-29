@@ -32,13 +32,3 @@
     path: /usr/sbin/ifconfig
     mode: 04755
     # why 04755 refer https://github.com/ansible/ansible/issues/13115
-
-- name: create .ssh directory
-  file:
-    path: "~/.ssh"
-    state: directory
-
-- name: copy known_hosts
-  file:
-    src: known_hosts
-    state: "~/.ssh"
