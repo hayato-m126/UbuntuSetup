@@ -6,3 +6,8 @@
     - { role: development, tags: development }
     - { role: multimedia, tags: multimedia }
     - { role: dotfiles, tags: dotfiles }
+
+- hosts: wsl
+  become: yes
+  roles:
+    - { role: wsl, tags: wsl }
