@@ -2,14 +2,14 @@
 - name: install pip packages
   pip:
     name:
-      - pre-commit
       - ruff
       - pytest-repeat
       - pytest-rerunfailures
       - pytest
-      - colorcet
-      - argcomplete
-      - vcstool
-      - kaggle
     executable: pip3
     extra_args: --user
+
+- command: rye install pre-commit
+- command: rye install argcomplete
+- command: rye install vcstool
+- command: rye install kaggle
