@@ -3,13 +3,10 @@
   become: yes
   apt:
     name:
-      - shutter
       - flameshot
-      - simplescreenrecorder
       - vlc
       - kolourpaint
-      - ffmpeg
-      - peek
+      - obs-studio
     update_cache: yes
 
 - name: get calibre install script
