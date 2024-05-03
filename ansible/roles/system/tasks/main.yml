@@ -49,8 +49,6 @@
     name: grub-customizer
     update_cache: yes
 
-- import_tasks: fish.yml
-
 - name: set cinnamon env default terminal
   dconf:
     key: "/org/cinnamon/desktop/applications/terminal/exec"

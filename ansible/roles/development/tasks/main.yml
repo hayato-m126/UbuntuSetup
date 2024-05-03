@@ -15,7 +15,6 @@
 - import_tasks: python.yml
 - import_tasks: docker.yml
 - import_tasks: rust.yml
-#- import_tasks: ros2-analysis.yml
 
 - name: install mise
   shell: curl https://mise.jdx.dev/install.sh | sh
