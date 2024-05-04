@@ -20,3 +20,11 @@
   ansible.builtin.shell: fisher update
   args:
     executable: /bin/fish
+
+- name: install mise
+  shell: curl https://mise.jdx.dev/install.sh | sh
+
+- name: mise tool install
+  ansible.builtin.shell: source ~/.bashrc && mise install -y
+  args:
+    executable: /bin/bash
