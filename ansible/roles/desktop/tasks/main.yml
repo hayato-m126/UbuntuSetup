@@ -1,40 +1,18 @@
 ---
-- name: use English folder name
-  shell: LANG=C xdg-user-dirs-update --force
-
-- name: install system tools using apt
+- name: install desktop tools using apt
   become: yes
   apt:
     name:
       - cinnamon-desktop-environment
-      - curl
       - dconf-editor
-      - dphys-swapfile
       - exfatprogs
       - gparted
-      - gufw
       - hardinfo
-      - htop
       - linux-generic-hwe-22.04
       - meld
-      - net-tools
-      - ncdu
-      - terminator
       - thunderbird-locale-ja
       - winbind
       - zstd
-    update_cache: yes
-
-- name: add git ppa
-  become: yes
-  apt_repository:
-    repo: ppa:git-core/ppa
-    state: present
-
-- name: install git latest
-  become: yes
-  apt:
-    name: git
     update_cache: yes
 
 - name: add grub-customizer ppa
