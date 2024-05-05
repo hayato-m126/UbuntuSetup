@@ -16,6 +16,6 @@
     state: directory
 
 - name: copy known_hosts
-  file:
-    src: known_hosts
-    state: "~/.ssh"
+  copy:
+      src: known_hosts
+      dest: ~/.ssh
