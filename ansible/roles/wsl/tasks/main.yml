@@ -1,7 +1,24 @@
 ---
-#sudo wget https://www.ubuntulinux.jp/ubuntu-jp-ppa-keyring.gpg -P /etc/apt/trusted.gpg.d/
-#sudo wget https://www.ubuntulinux.jp/ubuntu-ja-archive-keyring.gpg -P /etc/apt/trusted.gpg.d/
-#sudo wget https://www.ubuntulinux.jp/sources.list.d/jammy.list -O /etc/apt/sources.list.d/ubuntu-ja.list
+- name: Add Ubuntu Japanese PPA keyring
+  become: yes
+  ansible.builtin.apt_key:
+    url: https://www.ubuntulinux.jp/ubuntu-jp-ppa-keyring.gpg
+    state: present
+
+- name: Add Ubuntu Japanese archive keyring
+  become: yes
+  ansible.builtin.apt_key:
+    url: https://www.ubuntulinux.jp/ubuntu-ja-archive-keyring.gpg
+    state: present
+
+- name: Add Ubuntu Japanese repository
+  become: yes
+  ansible.builtin.copy:
+    src: https://www.ubuntulinux.jp/sources.list.d/jammy.list
+    dest: /etc/apt/sources.list.d/ubuntu-ja.list
+    owner: root
+    group: root
+    mode: '0644'
 
 - name: install ja package
   apt:
@@ -34,7 +51,6 @@
     update_cache: yes
 
 - name: input method setting
-  become: no
   blockinfile:
     path: ~/.profile
     block: |
