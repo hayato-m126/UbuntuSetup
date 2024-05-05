@@ -1,5 +1,5 @@
 ---
-- hosts: wsl
+- hosts: all
   become: yes
   roles:
     - { role: wsl, tags: wsl }
@@ -9,6 +9,9 @@
   roles:
     - { role: dotfiles, tags: dotfiles }
     - { role: system, tags: system }
+
+- host: dev
+  become: no
     - { role: development, tags: development }
 
 - hosts: desktop

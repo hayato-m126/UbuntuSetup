@@ -57,3 +57,9 @@
           fcitx-autostart > /dev/null 2>&1
           xset -r 49
       fi
+
+- name: unzip
+  apt:
+    name:
+      - unzip
+    update_cache: yes

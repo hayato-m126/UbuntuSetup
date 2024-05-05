@@ -14,6 +14,14 @@ https://www.ubuntulinux.jp/download/ja-remix
 ./setup-localhost.sh
 ```
 
+## after setup
+
+```shell
+bash $HOME/.dotfiles/install.sh
+cp github_rsa $HOME/.ssh/
+mise install -y
+```
+
 ## TODO
 
 - [] ansible 2.10以降に対応させる
