@@ -12,7 +12,7 @@
       - terminator
     update_cache: yes
 
- name: add fish ppa
+- name: add fish ppa
   become: yes
   apt_repository:
     repo: ppa:fish-shell/release-3

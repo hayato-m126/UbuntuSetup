@@ -27,6 +27,7 @@ fi
 source $HOME/.rye/env
 if ! (command -v ansible-playbook >/dev/null 2>&1); then
     rye install ansible-core
+     ansible-galaxy collection install community.general
 fi
 # dockerの場合とか考えると、パスワード聞かれるの都合悪い。TODO
 ansible-playbook -i ansible/inventories/localhost.ini ansible/setup-ubuntu22.04.yml --ask-become-pass -e ansible_user=$USER
