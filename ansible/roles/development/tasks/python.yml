@@ -1,4 +1,9 @@
 ---
+- name: install pip
+  become: yes
+  apt:
+    - python3-pip
+
 - name: install pip packages
   pip:
     name:
