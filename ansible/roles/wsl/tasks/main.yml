@@ -19,6 +19,7 @@
     owner: root
     group: root
     mode: '0644'
+    remote_src: true
 
 - name: install ja package
   apt:
