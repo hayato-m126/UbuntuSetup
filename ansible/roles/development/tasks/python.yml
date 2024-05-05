@@ -2,7 +2,9 @@
 - name: install pip
   become: yes
   apt:
-    - python3-pip
+    name:
+      - python3-pip
+    update_cache: yes
 
 - name: install pip packages
   pip:
