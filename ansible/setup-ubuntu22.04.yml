@@ -1,19 +1,17 @@
 ---
+- hosts: wsl
+  become: yes
+  roles:
+    - { role: wsl, tags: wsl }
+
 - hosts: all
   become: no
   roles:
     - { role: system, tags: system }
     - { role: dotfiles, tags: dotfiles }
-    - { role: shell, tags: shell }
     - { role: development, tags: development }
 
 - hosts: desktop
   become: no
   roles:
     - { role: desktop, tags: desktop }
-    - { role: multimedia, tags: multimedia }
-
-- hosts: wsl
-  become: yes
-  roles:
-    - { role: wsl, tags: wsl }

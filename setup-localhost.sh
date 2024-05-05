@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# echo "choose environment"
+# echo "1. desktop"
+# echo "2. wsl"
+# read choice
+
+# case $choice in
+#   1)
+#     sudo hostname desktop
+#     ;;
+#   2)
+#     sudo hostname wsl
+#     ;;
+#   *)
+#     exit 1
+# esac
+
 if ! (command -v curl >/dev/null 2>&1); then
     sudo apt -y update
     sudo apt -y install curl
@@ -11,6 +27,7 @@ fi
 source $HOME/.rye/env
 if ! (command -v ansible-playbook >/dev/null 2>&1); then
     rye install ansible-core
+     ansible-galaxy collection install community.general
 fi
 # dockerの場合とか考えると、パスワード聞かれるの都合悪い。TODO
 ansible-playbook -i ansible/inventories/localhost.ini ansible/setup-ubuntu22.04.yml --ask-become-pass -e ansible_user=$USER

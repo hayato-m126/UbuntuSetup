@@ -1,4 +1,11 @@
 ---
+- name: install pip
+  become: yes
+  apt:
+    name:
+      - python3-pip
+    update_cache: yes
+
 - name: install pip packages
   pip:
     name:
@@ -9,7 +16,8 @@
     executable: pip3
     extra_args: --user
 
-- command: rye install pre-commit
-- command: rye install argcomplete
-- command: rye install vcstool
-- command: rye install kaggle
+# 冪等性担保できない
+# - command: rye install pre-commit
+# - command: rye install argcomplete
+# - command: rye install vcstool
+# - command: rye install kaggle
