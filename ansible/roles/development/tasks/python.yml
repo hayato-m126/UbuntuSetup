@@ -16,7 +16,8 @@
     executable: pip3
     extra_args: --user
 
-- command: rye install pre-commit
-- command: rye install argcomplete
-- command: rye install vcstool
-- command: rye install kaggle
+# 冪等性担保できない
+# - command: rye install pre-commit
+# - command: rye install argcomplete
+# - command: rye install vcstool
+# - command: rye install kaggle
