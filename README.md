@@ -19,3 +19,4 @@ https://www.ubuntulinux.jp/download/ja-remix
 - [] ansible 2.10以降に対応させる
 - [] wslのブラウザ
 - [] ubuntu 24.04に対応させる
+- [] 実行前にsudo hostname wslしてホスト名書き換えておくことでinventoriesの対象に出来るか
