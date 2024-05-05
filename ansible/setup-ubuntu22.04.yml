@@ -1,6 +1,6 @@
 ---
 - hosts: wsl
-  become: no
+  become: yes
   roles:
     - { role: wsl, tags: wsl }
 
