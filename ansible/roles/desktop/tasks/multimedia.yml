@@ -7,18 +7,13 @@
       - vlc
       - kolourpaint
       - obs-studio
+      - libxcb-cursor0 # calibre dependency
     update_cache: yes
 
 - name: get calibre install script
   ansible.builtin.get_url:
     url: https://download.calibre-ebook.com/linux-installer.sh
     dest: /tmp/calibre-installer.sh
-
-- name: install calibre dependency
-  ansible.builtin.apt:
-    name:
-      - libxcb-cursor0
-    update_cache: yes
 
 - name: execute calibre install
   become: yes
