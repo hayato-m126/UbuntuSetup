@@ -60,7 +60,7 @@
 
 - name: set clock local for Windows dual boot system
   become: yes
-  timezone:
+  community.general.timezone:
     name: Asia/Tokyo
     hwclock: local
 

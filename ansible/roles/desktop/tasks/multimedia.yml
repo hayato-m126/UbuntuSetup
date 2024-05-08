@@ -10,7 +10,7 @@
     update_cache: yes
 
 - name: get calibre install script
-  get_url:
+  ansible.builtin.get_url:
     url: https://download.calibre-ebook.com/linux-installer.sh
     dest: /tmp/calibre-installer.sh
 
