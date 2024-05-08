@@ -1,7 +1,7 @@
 ---
 - name: install develop tools
   become: yes
-  apt:
+  ansible.builtin.apt:
     name:
       - cmake
       - cmake-curses-gui
@@ -15,13 +15,13 @@
 
 - name: copy cyclonedds.conf for ros2
   become: yes
-  copy:
+  ansible.builtin.copy:
     src: 60_cyclonedds.conf
     dest: /etc/sysctl.d/60_cyclonedds.conf
 
 - name: change ifconfig permission
   become: yes
-  file:
+  ansible.builtin.file:
     path: /usr/sbin/ifconfig
     mode: 04755
     # why 04755 refer https://github.com/ansible/ansible/issues/13115

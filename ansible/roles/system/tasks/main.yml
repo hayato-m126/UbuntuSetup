@@ -1,10 +1,10 @@
 ---
 - name: use English folder name
-  shell: LANG=C xdg-user-dirs-update --force
+  ansible.builtin.shell: LANG=C xdg-user-dirs-update --force
 
 - name: install system tools using apt
   become: yes
-  apt:
+  ansible.builtin.apt:
     name:
       - htop
       - net-tools
@@ -14,13 +14,13 @@
 
 - name: add fish ppa
   become: yes
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: ppa:fish-shell/release-3
     state: present
 
 - name: install fish shell
   become: yes
-  apt:
+  ansible.builtin.apt:
     name: fish
     update_cache: yes
 
@@ -35,4 +35,4 @@
     executable: /bin/fish
 
 - name: install mise
-  shell: curl https://mise.jdx.dev/install.sh | sh
+  ansible.builtin.shell: curl https://mise.jdx.dev/install.sh | sh

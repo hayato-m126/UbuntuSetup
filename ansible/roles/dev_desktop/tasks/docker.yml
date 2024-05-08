@@ -1,7 +1,7 @@
 ---
 - name: install docker build dependencies
   become: yes
-  apt:
+  ansible.builtin.apt:
     name:
       - apt-transport-https
       - ca-certificates
@@ -12,18 +12,18 @@
 
 - name: add docker apt key
   become: yes
-  apt_key:
+  ansible.builtin.apt_key:
     url: 'https://download.docker.com/linux/ubuntu/gpg'
     state: present
 
 - name: add docker repository
   become: yes
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable"
 
 - name: install docker
   become: yes
-  apt:
+  ansible.builtin.apt:
     name:
       - docker-ce
       - docker-ce-cli
@@ -33,7 +33,7 @@
 
 - name: add {{ ansible_user }} to docker group
   become: yes
-  user:
+  ansible.builtin.user:
     name: "{{ ansible_user }}"
     groups: docker
     append: yes

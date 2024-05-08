@@ -1,21 +1,21 @@
 ---
 - name: install git latest
   become: yes
-  apt:
+  ansible.builtin.apt:
     name: git
     update_cache: yes
 
 - name: clone dotfiles
-  git:
+  ansible.builtin.git:
     repo: https://github.com/hayato-m126/dotfiles.git
     dest: ~/.dotfiles
 
 - name: create .ssh directory
-  file:
+  ansible.builtin.file:
     path: "~/.ssh"
     state: directory
 
 - name: copy known_hosts
-  copy:
+  ansible.builtin.copy:
       src: known_hosts
       dest: ~/.ssh

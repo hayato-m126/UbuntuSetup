@@ -1,19 +1,20 @@
 ---
 - name: install multimedia applications using apt
   become: yes
-  apt:
+  ansible.builtin.apt:
     name:
       - flameshot
       - vlc
       - kolourpaint
       - obs-studio
+      - libxcb-cursor0 # calibre dependency
     update_cache: yes
 
 - name: get calibre install script
-  get_url:
+  ansible.builtin.get_url:
     url: https://download.calibre-ebook.com/linux-installer.sh
     dest: /tmp/calibre-installer.sh
 
 - name: execute calibre install
   become: yes
-  shell: bash /tmp/calibre-installer.sh
+  ansible.builtin.shell: bash /tmp/calibre-installer.sh

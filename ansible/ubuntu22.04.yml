@@ -1,0 +1,24 @@
+---
+- name: setup local machine
+  hosts: localhost
+  connection: local
+  vars_prompt:
+    - name: prompt_wsl
+      prompt: Is target environment WSL? [y/N]
+      private: false
+    - name: prompt_dev
+      prompt: Is target environment for development? [y/N]
+      private: false
+      default: "y"
+  roles:
+    - role: wsl
+      when: prompt_wsl == 'y'
+    - role: dotfiles
+    - role: system
+    - role: desktop
+      when: prompt_wsl != 'y'
+    - role: development
+      when: prompt_dev == 'y'
+    - role: dev_desktop
+      when: prompt_dev == 'y' and prompt_wsl != 'y'
+
