@@ -17,7 +17,7 @@
 
 - name: add grub-customizer ppa
   become: yes
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: ppa:trebelnik-stefina/grub-customizer
     state: present
 
@@ -73,13 +73,13 @@
 
 - name: add chrome apt key
   become: yes
-  apt_key:
+  ansible.builtin.apt_key:
     url: https://dl-ssl.google.com/linux/linux_signing_key.pub
     state: present
 
 - name: add chrome apt repository
   become: yes
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
     filename: "google-chrome"
     state: present
