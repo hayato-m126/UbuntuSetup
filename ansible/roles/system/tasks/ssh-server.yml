@@ -11,7 +11,7 @@
     mode: '700'
 
 - name: update ssh settings (2/6)
-  copy:
+  ansible.builtin.copy:
     src: authorized_keys
     dest: ~/.ssh/authorized_keys
     mode: '600'

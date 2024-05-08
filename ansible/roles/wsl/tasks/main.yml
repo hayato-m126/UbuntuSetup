@@ -27,7 +27,7 @@
 
 - name: copy font conf
   become: yes
-  copy:
+  ansible.builtin.copy:
     src: local.conf
     dest: /etc/fonts/local.conf
 

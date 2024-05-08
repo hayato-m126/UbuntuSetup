@@ -16,6 +16,6 @@
     state: directory
 
 - name: copy known_hosts
-  copy:
+  ansible.builtin.copy:
       src: known_hosts
       dest: ~/.ssh
