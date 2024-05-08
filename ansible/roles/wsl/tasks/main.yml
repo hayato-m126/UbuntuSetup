@@ -54,7 +54,7 @@
     update_cache: yes
 
 - name: input method setting
-  blockinfile:
+  ansible.builtin.blockinfile:
     path: ~/.profile
     block: |
       export GTK_IM_MODULE=fcitx
