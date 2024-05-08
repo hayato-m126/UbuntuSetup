@@ -16,4 +16,4 @@
 
 - name: execute calibre install
   become: yes
-  shell: bash /tmp/calibre-installer.sh
+  ansible.builtin.shell: bash /tmp/calibre-installer.sh
