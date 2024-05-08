@@ -53,7 +53,7 @@
 
 - name: disable sleep when close note pc display
   become: yes
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: /etc/systemd/logind.conf
     line: "HandleLidSwitch=ignore"
     insertafter: EOF
@@ -98,7 +98,7 @@
 
 - name: update keeweb setting to use in gpu environment
   become: yes
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: /usr/share/applications/keeweb.desktop
     line: "Exec=keeweb --no-sandbox %u"
     state: present
