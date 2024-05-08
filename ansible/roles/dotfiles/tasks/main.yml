@@ -6,7 +6,7 @@
     update_cache: yes
 
 - name: clone dotfiles
-  git:
+  ansible.builtin.git:
     repo: https://github.com/hayato-m126/dotfiles.git
     dest: ~/.dotfiles
 
