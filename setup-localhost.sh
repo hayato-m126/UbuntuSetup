@@ -13,4 +13,5 @@ if ! (command -v ansible-playbook >/dev/null 2>&1); then
     rye install ansible-core
     ansible-galaxy collection install community.general
 fi
-ansible-playbook local.yaml --ask-become-pass -e ansible_user=$USER
+ansible-playbook ansible/ubuntu22.04.yml --ask-become-pass -e ansible_user=$USER
+
