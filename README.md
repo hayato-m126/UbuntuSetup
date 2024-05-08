@@ -24,5 +24,5 @@ mise install -y
 
 ## TODO
 
-- [] wslのブラウザ
-- [] ubuntu 24.04に対応させる
+- [ ] wslのブラウザ
+- [ ] ubuntu 24.04に対応させる
