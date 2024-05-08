@@ -14,6 +14,12 @@
     url: https://download.calibre-ebook.com/linux-installer.sh
     dest: /tmp/calibre-installer.sh
 
+- name: install calibre dependency
+  ansible.builtin.apt:
+    name:
+      - libxcb-cursor0
+  update_cache: yes
+
 - name: execute calibre install
   become: yes
   ansible.builtin.shell: bash /tmp/calibre-installer.sh
