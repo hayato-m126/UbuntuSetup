@@ -14,7 +14,7 @@
 
 - name: add fish ppa
   become: yes
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: ppa:fish-shell/release-3
     state: present
 
