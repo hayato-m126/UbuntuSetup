@@ -28,25 +28,25 @@
     update_cache: yes
 
 - name: set cinnamon env default terminal
-  dconf:
+  community.general.dconf:
     key: "/org/cinnamon/desktop/applications/terminal/exec"
     value: "'terminator'"
     state: present
 
 - name: set cinnamon env key customize (1/2)
-  dconf:
+  community.general.dconf:
     key: "/org/cinnamon/desktop/wm/preferences/mouse-button-modifier"
     value: "'<Super>'"
     state: present
 
 - name: set cinnamon env key customize (2/2)
-  dconf:
+  community.general.dconf:
     key: "/org/cinnamon/desktop/wm/preferences/mouse-button-zoom-modifier"
     value: "'<Super>'"
     state: present
 
 - name: set start menu favorite
-  dconf:
+  community.general.dconf:
     key: "/org/cinnamon/favorite-apps"
     value: "['firefox.desktop', 'cinnamon-settings.desktop', 'nemo.desktop', 'terminator.desktop']"
     state: present
