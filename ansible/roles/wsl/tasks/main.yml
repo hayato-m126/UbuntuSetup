@@ -1,20 +1,24 @@
 ---
 - name: Add Ubuntu Japanese PPA keyring
+  become: yes
   ansible.builtin.apt_key:
     url: https://www.ubuntulinux.jp/ubuntu-jp-ppa-keyring.gpg
     state: present
 
 - name: Add Ubuntu Japanese archive keyring
+  become: yes
   ansible.builtin.apt_key:
     url: https://www.ubuntulinux.jp/ubuntu-ja-archive-keyring.gpg
     state: present
 
 - name: Download Ubuntu Japanese repository
+  become: yes
   ansible.builtin.get_url:
     url: https://www.ubuntulinux.jp/sources.list.d/jammy.list
     dest: /etc/apt/sources.list.d/ubuntu-ja.list
 
 - name: install ja package
+  become: yes
   apt:
     name:
       - ubuntu-defaults-ja
@@ -22,22 +26,27 @@
     update_cache: yes
 
 - name: copy font conf
+  become: yes
   copy:
     src: local.conf
     dest: /etc/fonts/local.conf
 
 - name: Ensure a locale exists
+  become: yes
   community.general.locale_gen:
     name: ja_JP.UTF-8
     state: present
 
 - name: keyboard setting
+  become: yes
   command: localectl set-x11-keymap jp jp106
 
 - name: change locale
+  become: yes
   command: update-locale LANG=ja_JP.UTF-8
 
 - name: install input method
+  become: yes
   apt:
     name:
       - fcitx-mozc
@@ -45,7 +54,6 @@
     update_cache: yes
 
 - name: input method setting
-  become: no
   blockinfile:
     path: ~/.profile
     block: |
@@ -59,6 +67,7 @@
       fi
 
 - name: unzip
+  become: yes
   apt:
     name:
       - unzip

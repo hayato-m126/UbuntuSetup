@@ -1,21 +1,5 @@
 #!/bin/bash
 
-# echo "choose environment"
-# echo "1. desktop"
-# echo "2. wsl"
-# read choice
-
-# case $choice in
-#   1)
-#     sudo hostname desktop
-#     ;;
-#   2)
-#     sudo hostname wsl
-#     ;;
-#   *)
-#     exit 1
-# esac
-
 if ! (command -v curl >/dev/null 2>&1); then
     sudo apt -y update
     sudo apt -y install curl
