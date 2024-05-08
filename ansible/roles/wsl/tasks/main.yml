@@ -39,11 +39,11 @@
 
 - name: keyboard setting
   become: yes
-  command: localectl set-x11-keymap jp jp106
+  ansible.builtin.command: localectl set-x11-keymap jp jp106
 
 - name: change locale
   become: yes
-  command: update-locale LANG=ja_JP.UTF-8
+  ansible.builtin.command: update-locale LANG=ja_JP.UTF-8
 
 - name: install input method
   become: yes
