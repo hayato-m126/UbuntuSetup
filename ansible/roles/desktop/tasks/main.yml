@@ -1,7 +1,7 @@
 ---
 - name: install desktop tools using apt
   become: yes
-  apt:
+  ansible.builtin.apt:
     name:
       - cinnamon-desktop-environment
       - dconf-editor
@@ -23,7 +23,7 @@
 
 - name: install grub-customizer
   become: yes
-  apt:
+  ansible.builtin.apt:
     name: grub-customizer
     update_cache: yes
 
@@ -86,13 +86,13 @@
 
 - name: install google-chrome
   become: yes
-  apt:
+  ansible.builtin.apt:
     name: google-chrome-stable
     update_cache: yes
 
 - name: install keeweb
   become: yes
-  apt:
+  ansible.builtin.apt:
     deb: https://github.com/keeweb/keeweb/releases/download/v1.18.7/KeeWeb-1.18.7.linux.x64.deb
     update_cache: yes
 

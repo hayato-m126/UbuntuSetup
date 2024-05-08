@@ -1,7 +1,7 @@
 ---
 - name: install multimedia applications using apt
   become: yes
-  apt:
+  ansible.builtin.apt:
     name:
       - flameshot
       - vlc

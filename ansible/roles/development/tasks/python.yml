@@ -1,7 +1,7 @@
 ---
 - name: install pip
   become: yes
-  apt:
+  ansible.builtin.apt:
     name:
       - python3-pip
     update_cache: yes

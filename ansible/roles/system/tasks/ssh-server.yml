@@ -1,7 +1,7 @@
 ---
 - name: install openssh-server
   become: yes
-  apt:
+  ansible.builtin.apt:
     name: openssh-server
 
 - name: update ssh settings (1/6)

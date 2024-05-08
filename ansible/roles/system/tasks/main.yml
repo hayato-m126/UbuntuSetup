@@ -4,7 +4,7 @@
 
 - name: install system tools using apt
   become: yes
-  apt:
+  ansible.builtin.apt:
     name:
       - htop
       - net-tools
@@ -20,7 +20,7 @@
 
 - name: install fish shell
   become: yes
-  apt:
+  ansible.builtin.apt:
     name: fish
     update_cache: yes
 

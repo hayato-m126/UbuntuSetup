@@ -1,7 +1,7 @@
 ---
 - name: install git latest
   become: yes
-  apt:
+  ansible.builtin.apt:
     name: git
     update_cache: yes
 

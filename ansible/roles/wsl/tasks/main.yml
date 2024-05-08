@@ -19,7 +19,7 @@
 
 - name: install ja package
   become: yes
-  apt:
+  ansible.builtin.apt:
     name:
       - ubuntu-defaults-ja
       - language-pack-ja
@@ -47,7 +47,7 @@
 
 - name: install input method
   become: yes
-  apt:
+  ansible.builtin.apt:
     name:
       - fcitx-mozc
       - x11-xserver-utils
@@ -68,7 +68,7 @@
 
 - name: unzip
   become: yes
-  apt:
+  ansible.builtin.apt:
     name:
       - unzip
     update_cache: yes

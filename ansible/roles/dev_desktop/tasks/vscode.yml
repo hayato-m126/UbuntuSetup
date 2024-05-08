@@ -14,13 +14,13 @@
 
 - name: install vscode dependencies
   become: yes
-  apt:
+  ansible.builtin.apt:
     name:
       - apt-transport-https
     state: present
 
 - name: install VS Code
   become: yes
-  apt:
+  ansible.builtin.apt:
     name: code
     state: present
