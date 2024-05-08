@@ -21,7 +21,7 @@
 
 - name: change ifconfig permission
   become: yes
-  file:
+  ansible.builtin.file:
     path: /usr/sbin/ifconfig
     mode: 04755
     # why 04755 refer https://github.com/ansible/ansible/issues/13115

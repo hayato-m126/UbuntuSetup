@@ -5,7 +5,7 @@
     name: openssh-server
 
 - name: update ssh settings (1/6)
-  file:
+  ansible.builtin.file:
     path: ~/.ssh
     state: directory
     mode: '700'
