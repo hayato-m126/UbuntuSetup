@@ -66,7 +66,7 @@
 
 - name: setting for winbind
   become: yes
-  replace:
+  ansible.builtin.replace:
     path: /etc/nsswitch.conf
     regexp: " dns$"
     replace: " dns wins"
