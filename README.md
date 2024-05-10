@@ -8,6 +8,20 @@ Ubuntu 22.04 LTS 64bit日本語Remix
 
 https://www.ubuntulinux.jp/download/ja-remix
 
+## how to create install media
+
+## Ubuntu
+
+usb-creator-gtk
+
+```shell
+sudo apt install usb-creator-gtk
+```
+
+## Windows
+
+<https://rufus.ie/ja/>
+
 ## how to run
 
 ```shell
