@@ -14,11 +14,3 @@ if ! (command -v ansible-playbook >/dev/null 2>&1); then
     ansible-galaxy collection install community.general
 fi
 ansible-playbook ansible/ubuntu22.04.yml --ask-become-pass -e ansible_user=$USER
-
-# post install
-if [ -f "$HOME/.ssh/github_rsa" ]; then
-    bash $HOME/.dotfiles/install.sh
-    mise install -y
-else
-    echo "$HOME/.ssh/github_rsa not found"
-fi
