@@ -24,16 +24,10 @@ sudo apt install usb-creator-gtk
 
 ## how to run
 
+事前にgithub_rsaをコピーしておく
+
 ```shell
 ./setup-localhost.sh
-```
-
-## after setup
-
-```shell
-bash $HOME/.dotfiles/install.sh
-cp github_rsa $HOME/.ssh/
-mise install -y
 ```
 
 ## TODO
