@@ -1,0 +1,19 @@
+
+- name: brave apt key
+  become: yes
+  block:
+    - ansible.builtin.get_url:
+        url: https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+        dest: /usr/share/keyrings/brave-browser-archive-keyring.gpg
+
+    - ansible.builtin.apt_repository:
+        repo: "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"
+        state: present
+
+
+- name: install brave using apt
+  become: yes
+  ansible.builtin.apt:
+    name:
+      - brave-browser
+    update_cache: yes

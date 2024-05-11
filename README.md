@@ -32,5 +32,4 @@ sudo apt install usb-creator-gtk
 
 ## TODO
 
-- [ ] wslのブラウザ
 - [ ] ubuntu 24.04に対応させる
