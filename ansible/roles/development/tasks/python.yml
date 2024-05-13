@@ -4,6 +4,7 @@
   ansible.builtin.apt:
     name:
       - python3-pip
+      - python3-venv # pipx dependency
     update_cache: yes
 
 - name: install pip packages
@@ -15,9 +16,3 @@
       - pytest
     executable: pip3
     extra_args: --user
-
-# 冪等性担保できない
-# - command: rye install pre-commit
-# - command: rye install argcomplete
-# - command: rye install vcstool
-# - command: rye install kaggle
