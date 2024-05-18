@@ -33,3 +33,4 @@ sudo apt install usb-creator-gtk
 ## TODO
 
 - [ ] ubuntu 24.04に対応させる
+- [ ] calibreが何度も実行されるのなんとかする
