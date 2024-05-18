@@ -9,12 +9,3 @@
       - obs-studio
       - libxcb-cursor0 # calibre dependency
     update_cache: yes
-
-- name: get calibre install script
-  ansible.builtin.get_url:
-    url: https://download.calibre-ebook.com/linux-installer.sh
-    dest: /tmp/calibre-installer.sh
-
-- name: execute calibre install
-  become: yes
-  ansible.builtin.shell: bash /tmp/calibre-installer.sh
