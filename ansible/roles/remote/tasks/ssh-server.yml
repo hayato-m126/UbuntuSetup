@@ -17,24 +17,28 @@
     mode: '600'
 
 - name: update ssh settings (3/6)
+  become: yes
   ansible.builtin.replace:
     path: /etc/ssh/sshd_config
     regexp: "^#Port 22"
     replace: "Port {{ port_no }}"
 
 - name: update ssh settings (4/6)
+  become: yes
   ansible.builtin.replace:
     path: /etc/ssh/sshd_config
     regexp: "^#AuthorizedKeysFile"
     replace: "AuthorizedKeysFile"
 
 - name: update ssh settings (5/6)
+  become: yes
   ansible.builtin.replace:
     path: /etc/ssh/sshd_config
     regexp: "^#PasswordAuthentication yes"
     replace: "PasswordAuthentication no"
 
 - name: update ssh settings (6/6)
+  become: yes
   ansible.builtin.replace:
     path: /etc/ssh/sshd_config
     regexp: "PermitRootLogin prohibit-password"

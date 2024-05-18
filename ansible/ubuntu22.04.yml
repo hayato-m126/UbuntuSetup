@@ -10,6 +10,9 @@
       prompt: Is target environment for development? [y/N]
       private: false
       default: "y"
+    - name: prompt_remote
+      prompt: Set up remote tools? [y/N]
+      private: false
   roles:
     - role: wsl
       when: prompt_wsl == 'y'
@@ -22,5 +25,5 @@
     - role: dev_desktop
       when: prompt_dev == 'y' and prompt_wsl != 'y'
     - role: remote
-      when: prompt_dev == 'y' and prompt_wsl != 'y'
+      when: prompt_remote == 'y'
 
