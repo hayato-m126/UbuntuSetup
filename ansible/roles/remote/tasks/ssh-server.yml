@@ -21,7 +21,7 @@
   ansible.builtin.replace:
     path: /etc/ssh/sshd_config
     regexp: "^#Port 22"
-    replace: "Port {{ port_no }}" # TODO: set port_no from prompt
+    replace: "Port {{ ssh_port }}"
 
 - name: update ssh settings (4/6)
   become: yes
