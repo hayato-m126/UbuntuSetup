@@ -14,5 +14,5 @@ if ! (command -v ansible-playbook >/dev/null 2>&1); then
     ansible-galaxy collection install community.general
 fi
 
-source "22.04.env"
-ansible-playbook ansible/ubuntu.yml --ask-become-pass -e ansible_user=$USER
+ENV_JSON=22.04.json
+ansible-playbook ansible/ubuntu.yml --ask-become-pass -e ansible_user=$USER -e @${ENV_JSON}
