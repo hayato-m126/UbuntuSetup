@@ -14,7 +14,7 @@
 - name: Download Ubuntu Japanese repository
   become: yes
   ansible.builtin.get_url:
-    url: "https://www.ubuntulinux.jp/sources.list.d/{{ os_code }}.list"
+    url: "https://www.ubuntulinux.jp/sources.list.d/${{ os_code }}.list"
     dest: /etc/apt/sources.list.d/ubuntu-ja.list
 
 - name: install ja package

@@ -8,7 +8,7 @@
       - exfatprogs
       - gparted
       - hardinfo
-      - "linux-generic-hwe-{{ os_version }}"
+      - "linux-generic-hwe-${{ os_version }}"
       - meld
       - thunderbird-locale-ja
       - winbind
