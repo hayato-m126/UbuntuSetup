@@ -19,7 +19,7 @@
 - name: add docker repository
   become: yes
   ansible.builtin.apt_repository:
-    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ os_code }} stable"
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ubuntu_code }} stable"
 
 - name: install docker
   become: yes
