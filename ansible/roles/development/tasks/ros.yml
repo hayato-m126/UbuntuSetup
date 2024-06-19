@@ -1,0 +1,5 @@
+- name: Install foxglove
+  become: yes
+  community.general.snap:
+    name:
+      - foxglove-studio

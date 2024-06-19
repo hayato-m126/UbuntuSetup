@@ -12,6 +12,7 @@
 
 - import_tasks: python.yml
 - import_tasks: rust.yml
+- import_tasks: ros.yml
 
 - name: copy cyclonedds.conf for ros2
   become: yes
