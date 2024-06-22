@@ -14,6 +14,7 @@ if [ "$answer" == "y" ]; then
     rye install argcomplete
     rye install vcstool
     rye install kaggle
+    rye install ruff
 else
     echo "cancel"
 fi
