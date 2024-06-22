@@ -15,17 +15,17 @@
       - zstd
     update_cache: yes
 
-# - name: add grub-customizer ppa
-#   become: yes
-#   ansible.builtin.apt_repository:
-#     repo: ppa:trebelnik-stefina/grub-customizer
-#     state: present
+- name: add grub-customizer ppa
+  become: yes
+  ansible.builtin.apt_repository:
+    repo: ppa:danielrichter2007/grub-customizer
+    state: present
 
-# - name: install grub-customizer
-#   become: yes
-#   ansible.builtin.apt:
-#     name: grub-customizer
-#     update_cache: yes
+- name: install grub-customizer
+  become: yes
+  ansible.builtin.apt:
+    name: grub-customizer
+    update_cache: yes
 
 - name: set cinnamon env default terminal
   community.general.dconf:
