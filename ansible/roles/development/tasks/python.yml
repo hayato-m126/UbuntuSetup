@@ -7,12 +7,12 @@
       - python3-venv # pipx dependency
     update_cache: yes
 
-# - name: install pip packages
-#   ansible.builtin.pip:
-#     name:
-#       - ruff
-#       - pytest-repeat
-#       - pytest-rerunfailures
-#       - pytest
-#     executable: pip3
-#     extra_args: --user
+- name: install pip packages
+  ansible.builtin.pip:
+    name:
+      - ruff
+      - pytest-repeat
+      - pytest-rerunfailures
+      - pytest
+    executable: pip3
+    extra_args: --user
