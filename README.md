@@ -29,7 +29,3 @@ sudo apt install usb-creator-gtk
 ```shell
 ./setup-localhost.sh
 ```
-
-## TODO
-
-- [ ] ubuntu 24.04に対応させる

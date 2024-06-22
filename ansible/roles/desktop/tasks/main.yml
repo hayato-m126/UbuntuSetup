@@ -18,7 +18,7 @@
 - name: add grub-customizer ppa
   become: yes
   ansible.builtin.apt_repository:
-    repo: ppa:trebelnik-stefina/grub-customizer
+    repo: ppa:danielrichter2007/grub-customizer
     state: present
 
 - name: install grub-customizer
@@ -89,20 +89,5 @@
   ansible.builtin.apt:
     name: google-chrome-stable
     update_cache: yes
-
-- name: install keeweb
-  become: yes
-  ansible.builtin.apt:
-    deb: https://github.com/keeweb/keeweb/releases/download/v1.18.7/KeeWeb-1.18.7.linux.x64.deb
-    update_cache: yes
-
-- name: update keeweb setting to use in gpu environment
-  become: yes
-  ansible.builtin.lineinfile:
-    path: /usr/share/applications/keeweb.desktop
-    line: "Exec=keeweb --no-sandbox %u"
-    state: present
-    backrefs: yes
-    regexp: 'Exec=keeweb %u'
 
 - import_tasks: multimedia.yml
