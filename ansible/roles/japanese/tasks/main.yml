@@ -1,5 +1,5 @@
 - name: add Ubuntu Japanese Team package repository
-  import_tasks: "{{ ubuntu_code }}".yml
+  import_tasks: "{{ ubuntu_code }}.yml"
 
 - name: install ja package
   become: yes
