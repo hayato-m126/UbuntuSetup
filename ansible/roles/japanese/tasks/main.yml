@@ -1,0 +1,10 @@
+- name: add Ubuntu Japanese Team package repository
+  import_tasks: "{{ ubuntu_code }}".yml
+
+- name: install ja package
+  become: yes
+  ansible.builtin.apt:
+    name:
+      - ubuntu-defaults-ja
+      - language-pack-ja
+    update_cache: yes

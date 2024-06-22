@@ -15,6 +15,7 @@
     #   private: false
   roles:
     - role: debug
+    - role: japanese
     - role: wsl
       when: prompt_wsl == 'y'
     - role: dotfiles
