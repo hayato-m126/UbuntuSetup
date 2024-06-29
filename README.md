@@ -29,3 +29,17 @@ sudo apt install usb-creator-gtk
 ```shell
 ./setup-localhost.sh
 ```
+
+## known issue for 24.04
+
+### chrome-remote-desktop
+
+24.04でchrome-remote-desktopを設定すると、リモートではログインできるが、ディスプレイつけてローカルでログインしようとするとできない。
+
+session already running　と出る。
+
+<https://askubuntu.com/questions/1516121/cant-login-session-already-running>
+
+### shell
+
+fishを設定するとbashに戻れない
