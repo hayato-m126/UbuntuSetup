@@ -10,6 +10,8 @@
       - net-tools
       - ncdu
       - terminator
+      - fzf
+      - ripgrep
     update_cache: yes
 
 - name: add fish ppa
