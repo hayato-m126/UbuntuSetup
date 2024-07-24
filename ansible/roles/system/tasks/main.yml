@@ -12,6 +12,7 @@
       - terminator
       - fzf
       - ripgrep
+      - libfuse2 # https://syohex.hatenablog.com/entry/2022/05/02/230822
     update_cache: yes
 
 - name: add fish ppa
