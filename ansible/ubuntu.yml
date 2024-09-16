@@ -14,7 +14,6 @@
       prompt: Set up remote tools? [y/N]
       private: false
   roles:
-    - role: init # set and display vars
     - role: japanese
     - role: wsl
       when: prompt_wsl == 'y'
