@@ -1,7 +1,0 @@
----
-- name: Print args
-  ansible.builtin.debug:
-    msg:
-      - ubuntu_code: "{{ ubuntu_code }}"
-      - os_version: "{{ os_version }}"
-      - ssh_port: "{{ ssh_port }}"
