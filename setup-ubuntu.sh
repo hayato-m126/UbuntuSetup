@@ -14,7 +14,5 @@ if ! (command -v ansible-playbook >/dev/null 2>&1); then
     ansible-galaxy collection install community.general
 fi
 
-VERSION_ID=$(grep '^VERSION_ID=' /etc/os-release | cut -d'=' -f2 | tr -d '"')
-UBUNTU_CODE=$(grep '^UBUNTU_CODENAME=' /etc/os-release | cut -d'=' -f2 | tr -d '"')
 ENV_JSON=env.json
 ansible-playbook ansible/ubuntu.yml --ask-become-pass -e @${ENV_JSON}

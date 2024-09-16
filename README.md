@@ -1,16 +1,15 @@
-# Ubuntu setup
+# Setup OS
 
-setup Ubuntu 22.04 development environment
+setup OS using ansible
 
-## requirements
+## Support OS
 
-Ubuntu 22.04 LTS 64bit日本語Remix
+- Ubuntu 22.04 LTS
+- Ubuntu 24.04 LTS
 
-https://www.ubuntulinux.jp/download/ja-remix
+## how to create Ubuntu install media
 
-## how to create install media
-
-## Ubuntu
+### Ubuntu
 
 usb-creator-gtk
 
@@ -18,7 +17,7 @@ usb-creator-gtk
 sudo apt install usb-creator-gtk
 ```
 
-## Windows
+### Windows
 
 <https://rufus.ie/ja/>
 
