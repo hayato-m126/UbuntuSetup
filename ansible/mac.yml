@@ -4,4 +4,4 @@
   connection: local
   roles:
     - role: dotfiles
-    # - role: mac
+    - role: mac

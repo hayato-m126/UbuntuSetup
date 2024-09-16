@@ -1,0 +1,4 @@
+- name: add brew path
+  ansible.builtin.lineinfile:
+    path: ~/.zprofile
+    line: eval "$(/opt/homebrew/bin/brew shellenv)"
