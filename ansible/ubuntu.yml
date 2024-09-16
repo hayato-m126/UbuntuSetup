@@ -10,9 +10,9 @@
       prompt: Is target environment for development? [y/N]
       private: false
       default: "y"
-    # - name: prompt_remote
-    #   prompt: Set up remote tools? [y/N]
-    #   private: false
+    - name: prompt_remote
+      prompt: Set up remote tools? [y/N]
+      private: false
   roles:
     - role: init # set and display vars
     - role: japanese
