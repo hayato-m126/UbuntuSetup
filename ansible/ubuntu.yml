@@ -13,8 +13,20 @@
     # - name: prompt_remote
     #   prompt: Set up remote tools? [y/N]
     #   private: false
+  tasks:
+    - name: set fact
+      ansible.builtin.set_fact:
+        os_version: "{{ ansible_facts['distribution_version'] }}"
+        ubuntu_code: "{{ ansible_facts['distribution_release'] }}"
+        ansible_user: "{{ ansible_facts['user_id'] }}"
+    - name: Print vars
+      ansible.builtin.debug:
+        msg:
+          - ubuntu_code: "{{ ubuntu_code }}"
+          - os_version: "{{ os_version }}"
+          - ansible_user: "{{ ansible_user }}"
+          - ssh_port: "{{ ssh_port }}"
   roles:
-    - role: debug
     - role: japanese
     - role: wsl
       when: prompt_wsl == 'y'
@@ -26,6 +38,6 @@
       when: prompt_dev == 'y'
     - role: dev_desktop
       when: prompt_dev == 'y' and prompt_wsl != 'y'
-    # - role: remote
-    #   when: prompt_remote == 'y'
+    - role: remote
+      when: prompt_remote == 'y'
 
