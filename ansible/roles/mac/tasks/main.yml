@@ -2,3 +2,50 @@
   ansible.builtin.lineinfile:
     path: ~/.zprofile
     line: eval "$(/opt/homebrew/bin/brew shellenv)"
+
+- name: update homebrew
+  community.general.homebrew:
+    update_homebrew: yes
+
+- name: brew install
+  community.general.homebrew:
+    name: '{{ item }}'
+    state: present
+  with_items:
+    - git
+    - git-lfs
+    - jq
+    - tree
+    - wget
+    - yq
+    - zstd
+    - fzf
+    - fish
+    - ripgrep
+
+- name: install homebrew cask packages
+  community.general.homebrew_cask:
+    name: '{{ item }}'
+    state: present
+    install_options: 'appdir=/Applications'
+  with_items:
+    - microsoft-edge
+    - thunderbird
+    - visual-studio-code
+    - google-japanese-ime
+    # - docker
+    # - podman
+    # - google-chrome
+
+- name: install fisher
+  ansible.builtin.shell: curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+  args:
+    executable: /opt/homebrew/bin/fish
+
+- name: fisher update
+  ansible.builtin.shell: fisher update
+  args:
+    executable: /opt/homebrew/bin/fish
+
+- name: install mise
+  ansible.builtin.shell: curl https://mise.jdx.dev/install.sh | sh
