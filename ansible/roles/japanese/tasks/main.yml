@@ -1,5 +1,22 @@
-- name: add Ubuntu Japanese Team package repository
-  import_tasks: "{{ ansible_facts['distribution_release'] }}.yml"
+- name: Add Ubuntu Japanese PPA keyring
+  become: yes
+  ansible.builtin.apt_key:
+    url: https://www.ubuntulinux.jp/ubuntu-jp-ppa-keyring.gpg
+    state: present
+  when: ubuntu_code == 'jammy'
+
+- name: Add Ubuntu Japanese archive keyring
+  become: yes
+  ansible.builtin.apt_key:
+    url: https://www.ubuntulinux.jp/ubuntu-ja-archive-keyring.gpg
+    state: present
+  when: ubuntu_code == 'jammy'
+
+- name: Download Ubuntu Japanese repository
+  become: yes
+  ansible.builtin.get_url:
+    url: "https://www.ubuntulinux.jp/sources.list.d/{{ ubuntu_code }}.list"
+    dest: /etc/apt/sources.list.d/ubuntu-ja.list
 
 - name: install ja package
   become: yes
