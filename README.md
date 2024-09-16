@@ -6,7 +6,6 @@ setup OS using ansible
 
 - Ubuntu 22.04 LTS
 - Ubuntu 24.04 LTS
-- macOS Sonoma
 
 ## how to create Ubuntu install media
 
