@@ -1,5 +1,5 @@
 - name: add Ubuntu Japanese Team package repository
-  import_tasks: "{{ ansible_facts['distribution_release'] }}".yml
+  import_tasks: "{{ ansible_facts['distribution_release'] }}.yml"
 
 - name: install ja package
   become: yes
