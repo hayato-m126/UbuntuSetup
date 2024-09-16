@@ -3,14 +3,14 @@
   ansible.builtin.apt_key:
     url: https://www.ubuntulinux.jp/ubuntu-jp-ppa-keyring.gpg
     state: present
-  when: "{{ ansible_facts['distribution_release'] == jammy }}"
+  when: "{{ ansible_facts['distribution_release'] == 'jammy' }}"
 
 - name: Add Ubuntu Japanese archive keyring
   become: yes
   ansible.builtin.apt_key:
     url: https://www.ubuntulinux.jp/ubuntu-ja-archive-keyring.gpg
     state: present
-  when: "{{ ansible_facts['distribution_release'] == jammy }}"
+  when: "{{ ansible_facts['distribution_release'] == 'jammy' }}"
 
 - name: Download Ubuntu Japanese repository
   become: yes
