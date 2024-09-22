@@ -15,8 +15,16 @@
 - name: Download Ubuntu Japanese repository
   become: yes
   ansible.builtin.get_url:
-    url: "https://www.ubuntulinux.jp/sources.list.d/{{ ansible_facts['distribution_release'] }}.list"
+    url: "https://www.ubuntulinux.jp/sources.list.d/jammy.list"
     dest: /etc/apt/sources.list.d/ubuntu-ja.list
+  when: "ansible_facts['distribution_release'] == 'jammy'"
+
+- name: Download Ubuntu Japanese repository
+  become: yes
+  ansible.builtin.get_url:
+    url: "https://www.ubuntulinux.jp/sources.list.d/noble.sources"
+    dest: /etc/apt/sources.list.d/ubuntu-ja.sources
+  when: "ansible_facts['distribution_release'] == 'noble'"
 
 - name: install ja package
   become: yes
