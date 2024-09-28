@@ -33,8 +33,7 @@
     - thunderbird
     - visual-studio-code
     - google-japanese-ime
-    # - docker
-    # - podman
+    - podman-desktop
     # - google-chrome
 
 - name: install fisher
