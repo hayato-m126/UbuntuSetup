@@ -13,7 +13,7 @@ if [ "$answer" == "y" ]; then
     uv tool install pre-commit
     uv tool install argcomplete
     uv tool install vcstool
-    vu tool install ruff
+    uv tool install ruff
 else
     echo "cancel"
 fi
