@@ -10,11 +10,10 @@ fi
 read -p "Do you want install python cli tools using rye? (y/n): " answer
 
 if [ "$answer" == "y" ]; then
-    rye install pre-commit
-    rye install argcomplete
-    rye install vcstool
-    rye install kaggle
-    rye install ruff
+    uv tool install pre-commit
+    uv tool install argcomplete
+    uv tool install vcstool
+    vu tool install ruff
 else
     echo "cancel"
 fi
