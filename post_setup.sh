@@ -7,7 +7,7 @@ else
     echo "$HOME/.ssh/github_rsa not found"
 fi
 
-read -p "Do you want install python cli tools using rye? (y/n): " answer
+read -p "Do you want install python cli tools using uv? (y/n): " answer
 
 if [ "$answer" == "y" ]; then
     uv tool install pre-commit
