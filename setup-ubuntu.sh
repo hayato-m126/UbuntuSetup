@@ -13,5 +13,10 @@ if ! (command -v ansible-playbook >/dev/null 2>&1); then
     ansible-galaxy collection install community.general
 fi
 
-ENV_JSON=env.json
-ansible-playbook ansible/ubuntu.yml --ask-become-pass -e @${ENV_JSON}
+# export .env
+set -o allexport
+# shellcheck disable=SC1091
+source "$(dirname "$0")/.env"
+set +o allexport
+
+ansible-playbook ansible/ubuntu.yml --ask-become-pass
